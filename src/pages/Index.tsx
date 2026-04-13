@@ -288,11 +288,7 @@ export default function Index() {
       <header className="sticky top-0 z-50 bg-iron border-b border-border shadow-lg shadow-black/40">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollTo("home")}>
-            <img src="https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/41d29d22-0695-4907-b28c-14ffb2c16e68.png" alt="Rubitel" className="w-9 h-9 object-contain invert brightness-0" style={{ filter: 'invert(78%) sepia(60%) saturate(1000%) hue-rotate(350deg) brightness(100%) contrast(95%)' }} />
-            <div>
-              <div className="font-oswald text-lg font-bold text-foreground tracking-wider leading-none">RUBITEL</div>
-              <div className="text-[10px] text-muted-foreground font-mono tracking-[0.2em]">INDUSTRIAL EQUIPMENT</div>
-            </div>
+            <img src="https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/files/6c2206d6-3bb0-49bf-bf54-8fdf31a52eda.jpg" alt="Rubitel" className="h-9 object-contain" style={{ filter: 'invert(78%) sepia(60%) saturate(1000%) hue-rotate(350deg) brightness(100%) contrast(95%)' }} />
           </div>
 
           <nav className="hidden lg:flex items-center gap-1">
