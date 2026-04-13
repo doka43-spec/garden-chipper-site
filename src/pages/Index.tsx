@@ -270,7 +270,7 @@ export default function Index() {
           <div className="flex items-center gap-6 text-xs text-muted-foreground font-mono">
             <span className="flex items-center gap-1.5">
               <Icon name="Phone" size={11} />
-              +7 (800) 555-00-00
+              +7 (912) 333-32-25
             </span>
             <span className="hidden md:flex items-center gap-1.5">
               <Icon name="Clock" size={11} />
@@ -809,7 +809,7 @@ export default function Index() {
           <div className="grid md:grid-cols-2 gap-10">
             <div className="space-y-6">
               {[
-                { icon: "Phone", label: "Телефон отдела продаж", val: "+7 (800) 555-00-00", sub: "Бесплатно по России, Пн–Пт 8–18" },
+                { icon: "Phone", label: "Телефон отдела продаж", val: "+7 (912) 333-32-25", sub: "Бесплатно по России, Пн–Пт 8–18" },
                 { icon: "Mail", label: "Email", val: "vyatkalux@yandex.ru", sub: "Ответ в течение 2 часов" },
                 { icon: "MapPin", label: "Офис и производство", val: "г. Тверь, ул. Промышленная, 42", sub: "Заезд по предварительной договорённости" },
                 { icon: "MessageCircle", label: "WhatsApp / Telegram", val: "+7 (900) 000-11-22", sub: "Быстрые ответы в мессенджерах" },
