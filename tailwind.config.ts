@@ -64,9 +64,9 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				steel: '#2e3338',
-				rust: '#a86828',
-				warning: '#d28333',
-				chrome: '#b8936a',
+				rust: '#c44a1a',
+				warning: '#fbb034',
+				chrome: '#b8c0c8',
 				iron: '#1a1a1a',
 				coal: '#111111',
 			},

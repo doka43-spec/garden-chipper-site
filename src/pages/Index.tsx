@@ -231,7 +231,7 @@ function ContactForm() {
         <button
           type="submit"
           disabled={status === "loading"}
-          className="w-full bg-warning text-black py-4 font-oswald font-bold tracking-wider uppercase hover:bg-[#b86e28] transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          className="w-full bg-warning text-black py-4 font-oswald font-bold tracking-wider uppercase hover:bg-amber-400 transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         >
           {status === "loading" ? (
             <>
@@ -290,8 +290,8 @@ export default function Index() {
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollTo("home")}>
             <img src="https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/41d29d22-0695-4907-b28c-14ffb2c16e68.png" alt="Rubitel" className="w-9 h-9 object-contain" style={{ filter: 'invert(78%) sepia(60%) saturate(1000%) hue-rotate(350deg) brightness(100%) contrast(95%)' }} />
             <div>
-              <div className="font-oswald text-lg font-bold tracking-wider leading-none" style={{ color: '#d28333' }}>RUBITEL</div>
-              <div className="text-[10px] font-mono tracking-[0.2em]" style={{ color: '#d28333', opacity: 0.7 }}>INDUSTRIAL EQUIPMENT</div>
+              <div className="font-oswald text-lg font-bold text-foreground tracking-wider leading-none">RUBITEL</div>
+              <div className="text-[10px] text-muted-foreground font-mono tracking-[0.2em]">INDUSTRIAL EQUIPMENT</div>
             </div>
           </div>
 
@@ -312,7 +312,7 @@ export default function Index() {
           <div className="flex items-center gap-3">
             <button
               onClick={() => scrollTo("contacts")}
-              className="hidden md:flex items-center gap-2 bg-warning text-black px-4 py-2 text-xs font-oswald font-bold tracking-wider uppercase hover:bg-[#b86e28] transition-colors"
+              className="hidden md:flex items-center gap-2 bg-warning text-black px-4 py-2 text-xs font-oswald font-bold tracking-wider uppercase hover:bg-amber-400 transition-colors"
             >
               <Icon name="Phone" size={13} />
               Заказать звонок
@@ -363,7 +363,7 @@ export default function Index() {
             <div className="animate-fade-in-up delay-300 flex flex-col sm:flex-row gap-4">
               <button
                 onClick={() => scrollTo("catalog")}
-                className="flex items-center justify-center gap-2 bg-warning text-black px-8 py-4 font-oswald font-bold text-base tracking-wider uppercase hover:bg-[#b86e28] transition-all hover:shadow-lg hover:shadow-warning/20"
+                className="flex items-center justify-center gap-2 bg-warning text-black px-8 py-4 font-oswald font-bold text-base tracking-wider uppercase hover:bg-amber-400 transition-all hover:shadow-lg hover:shadow-warning/20"
               >
                 <Icon name="ChevronRight" size={18} />
                 Смотреть каталог
@@ -425,7 +425,7 @@ export default function Index() {
                     <div className="font-oswald text-xl font-bold text-foreground">{p.price}</div>
                     <button
                       onClick={() => scrollTo("contacts")}
-                      className="bg-warning text-black px-4 py-2 text-xs font-oswald font-bold tracking-wider uppercase hover:bg-[#b86e28] transition-colors"
+                      className="bg-warning text-black px-4 py-2 text-xs font-oswald font-bold tracking-wider uppercase hover:bg-amber-400 transition-colors"
                     >
                       Заказать
                     </button>
@@ -478,7 +478,7 @@ export default function Index() {
             </div>
             <button
               onClick={() => scrollTo("contacts")}
-              className="flex-shrink-0 bg-warning text-black px-6 py-3 font-oswald font-bold tracking-wider uppercase text-sm hover:bg-[#b86e28] transition-colors"
+              className="flex-shrink-0 bg-warning text-black px-6 py-3 font-oswald font-bold tracking-wider uppercase text-sm hover:bg-amber-400 transition-colors"
             >
               Запросить деталь
             </button>
@@ -532,7 +532,7 @@ export default function Index() {
                   ))}
                 </ul>
               </div>
-              <button onClick={() => scrollTo("contacts")} className="mt-8 bg-warning text-black py-3 font-oswald font-bold tracking-wider uppercase text-sm hover:bg-[#b86e28] transition-colors w-full">
+              <button onClick={() => scrollTo("contacts")} className="mt-8 bg-warning text-black py-3 font-oswald font-bold tracking-wider uppercase text-sm hover:bg-amber-400 transition-colors w-full">
                 Заключить договор на ТО
               </button>
             </div>
@@ -648,7 +648,7 @@ export default function Index() {
             </div>
             <button
               onClick={() => scrollTo("contacts")}
-              className="flex-shrink-0 bg-warning text-black px-8 py-3 font-oswald font-bold tracking-wider uppercase hover:bg-[#b86e28] transition-colors"
+              className="flex-shrink-0 bg-warning text-black px-8 py-3 font-oswald font-bold tracking-wider uppercase hover:bg-amber-400 transition-colors"
             >
               Рассчитать лизинг
             </button>
@@ -688,7 +688,7 @@ export default function Index() {
             <div className="text-center px-4">
               <div className="font-oswald text-3xl font-bold text-foreground">165</div>
               <div className="text-xs text-muted-foreground font-mono mt-1 tracking-wider">ОТЗЫВОВ</div>
-              <button className="mt-4 bg-warning text-black px-4 py-2 text-xs font-oswald font-bold tracking-wider uppercase hover:bg-[#b86e28] transition-colors">
+              <button className="mt-4 bg-warning text-black px-4 py-2 text-xs font-oswald font-bold tracking-wider uppercase hover:bg-amber-400 transition-colors">
                 Оставить отзыв
               </button>
             </div>
