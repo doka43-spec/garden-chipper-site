@@ -174,7 +174,7 @@ export default function ReviewsSection({ scrollTo }: ReviewsSectionProps) {
               {[
                 { icon: "Phone", label: "Телефон отдела продаж", val: "+7 (912) 333-32-25", sub: "Бесплатно по России, Пн–Пт 8–18" },
                 { icon: "Mail", label: "Email", val: "vyatkalux@yandex.ru", sub: "Ответ в течение 2 часов" },
-                { icon: "MapPin", label: "Офис и производство", val: "г. Киров (обл), п. Торфяной, ул. Транспортная, 13б", sub: "Заезд по предварительной договорённости" },
+                { icon: "MapPin", label: "Офис и производство", val: "г. Киров (обл), п. Торфяной, ул. Транспортная, 13б", sub: "Заезд по предварительной договорённости", link: "https://yandex.ru/maps/?text=Киров+область+п.+Торфяной+ул.+Транспортная+13б" },
                 { icon: "MessageCircle", label: "WhatsApp / Telegram", val: "+7 (912) 333-32-25", sub: "Быстрые ответы в мессенджерах" },
               ].map((c) => (
                 <div key={c.label} className="flex items-start gap-4">
@@ -183,7 +183,13 @@ export default function ReviewsSection({ scrollTo }: ReviewsSectionProps) {
                   </div>
                   <div>
                     <div className="text-xs text-muted-foreground font-mono tracking-wider mb-1">{c.label}</div>
-                    <div className="font-oswald font-bold text-lg text-foreground">{c.val}</div>
+                    {'link' in c && c.link ? (
+                      <a href={c.link} target="_blank" rel="noopener noreferrer" className="font-oswald font-bold text-lg text-foreground hover:text-warning transition-colors underline-offset-2 hover:underline">
+                        {c.val}
+                      </a>
+                    ) : (
+                      <div className="font-oswald font-bold text-lg text-foreground">{c.val}</div>
+                    )}
                     <div className="text-xs text-muted-foreground font-plex mt-0.5">{c.sub}</div>
                   </div>
                 </div>
