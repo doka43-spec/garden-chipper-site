@@ -21,12 +21,12 @@ export const NAV_ITEMS = [
 export const PRODUCTS = [
   {
     id: 1,
-    name: "RUBITEL-500 ПРОФИ",
-    desc: "Дисковый измельчитель для древесины и веток диаметром до 200 мм",
-    power: "22 кВт",
-    capacity: "до 15 т/ч",
-    weight: "1 850 кг",
-    price: "от 480 000 ₽",
+    name: "RUBITEL Садовый",
+    desc: "Дисковый измельчитель веток диаметром до 60 мм",
+    power: "7 л.с.",
+    capacity: "до 0.5 м³/ч",
+    weight: "54 кг",
+    price: "45 000 ₽",
     tag: "ХИТ",
     tagColor: "bg-warning text-black",
   },
