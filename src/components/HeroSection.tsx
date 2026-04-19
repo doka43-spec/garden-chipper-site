@@ -39,7 +39,7 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
 
               ].map((s) => (
                 <div key={s.label}>
-                  <div className="font-oswald text-3xl font-bold text-warning leading-none">{s.val}</div>
+                  <div className="font-oswald text-3xl font-bold text-warning/60 leading-none">{s.val}</div>
                   <div className="text-xs text-muted-foreground font-mono mt-1 tracking-wider">{s.label}</div>
                 </div>
               ))}
