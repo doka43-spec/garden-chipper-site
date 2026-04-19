@@ -68,8 +68,8 @@ function PartCard({ part, scrollTo }: { part: typeof import("@/components/shared
   return (
     <div className="group border border-border bg-coal/60 hover:border-warning/40 hover:bg-coal/80 transition-all cursor-pointer flex flex-col">
       {images.length > 0 && (
-        <div className="relative h-40 bg-steel/20 overflow-hidden flex-shrink-0">
-          <img src={images[imgIdx]} alt={part.name} className="absolute inset-0 w-full h-full object-cover" />
+        <div className="relative h-56 bg-steel/10 overflow-hidden flex-shrink-0">
+          <img src={images[imgIdx]} alt={part.name} className="absolute inset-0 w-full h-full object-contain p-2" />
           {images.length > 1 && (
             <>
               <button onClick={(e) => { e.stopPropagation(); setImgIdx((imgIdx - 1 + images.length) % images.length); }} className="absolute left-1 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white w-6 h-6 flex items-center justify-center transition-colors">
