@@ -48,6 +48,7 @@ export const PRODUCTS = [
       "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/849d969e-9bb9-4379-86b2-d86a16e9ee75.JPG",
       "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/232652a1-7d4f-4a0f-808d-2d0fe61fe4ae.JPG",
     ],
+    videoUrl: "https://rutube.ru/video/3c9950f4b27c254ffd9da94619d50376/",
     name: "RUBITEL-X",
     desc: "Измельчитель веток диаметром до 100 мм",
     power: "21 л.с.",
