@@ -66,7 +66,7 @@ export default function Index() {
           <div className="flex items-center gap-3">
             <button
               onClick={() => scrollTo("contacts")}
-              className="hidden md:flex items-center gap-2 bg-warning text-black px-4 py-2 text-xs font-oswald font-bold tracking-wider uppercase hover:bg-amber-400 transition-colors"
+              className="hidden md:flex items-center gap-2 bg-warning/55 text-black px-4 py-2 text-xs font-oswald font-bold tracking-wider uppercase hover:bg-warning/80 transition-colors"
             >
               <Icon name="Phone" size={13} />
               Заказать звонок
