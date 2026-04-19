@@ -39,7 +39,14 @@ export const PRODUCTS = [
   },
   {
     id: 2,
-    images: ["https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/44fd17fc-c51a-4a33-9e17-1758fd755aad.JPG"],
+    images: [
+      "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/44fd17fc-c51a-4a33-9e17-1758fd755aad.JPG",
+      "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/83cfac3d-1303-4c1d-ad4c-6ed158398c3e.JPG",
+      "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/d8dd5a39-c126-4ea5-93eb-522e927de784.JPG",
+      "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/e6ff12ff-1bef-43b4-a3ec-7a3a1a04915d.JPG",
+      "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/849d969e-9bb9-4379-86b2-d86a16e9ee75.JPG",
+      "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/232652a1-7d4f-4a0f-808d-2d0fe61fe4ae.JPG",
+    ],
     name: "RUBITEL-X",
     desc: "Измельчитель веток диаметром до 100 мм",
     power: "21 л.с.",
