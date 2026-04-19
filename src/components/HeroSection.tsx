@@ -27,7 +27,7 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
             </div>
 
             <p className="animate-fade-in-up delay-200 text-chrome/60 text-lg leading-relaxed mb-10 max-w-lg font-plex">
-              Промышленные измельчители российского производства. Надёжность, подтверждённая тысячами часов работы на реальных производствах.
+              Садовые измельчители веток, рубительные машины, молотковые дробилки. Надёжность, качество, неприхотливость. Производство Россия. ИП Сухоруков Д.А.
             </p>
 
             <div className="animate-fade-in-up delay-400 mt-14 flex flex-wrap gap-8">
