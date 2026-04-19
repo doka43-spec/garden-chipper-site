@@ -29,6 +29,7 @@ export const PRODUCTS = [
     price: "45 000 ₽",
     tag: "ХИТ",
     tagColor: "bg-warning text-black",
+    image: "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/d747d096-586a-444c-9442-5b78dcc4f963.jpeg",
   },
   {
     id: 2,
