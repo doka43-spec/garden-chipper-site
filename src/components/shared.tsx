@@ -29,7 +29,13 @@ export const PRODUCTS = [
     price: "45 000 ₽",
     tag: "ХИТ",
     tagColor: "bg-warning text-black",
-    images: ["https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/d747d096-586a-444c-9442-5b78dcc4f963.jpeg"],
+    images: [
+      "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/d747d096-586a-444c-9442-5b78dcc4f963.jpeg",
+      "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/f7e91cd7-a26e-4c07-bacf-8f611c2bce2d.jpg",
+      "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/b22c03cc-a96d-412c-b495-41ae2c9df9b9.jpg",
+      "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/aa9c5143-15f3-4714-87d4-c30ae303b182.jpg",
+      "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/e466c3d3-0fbd-4854-b41e-7444d5c79e70.jpg",
+    ],
   },
   {
     id: 2,
