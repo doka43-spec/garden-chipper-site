@@ -109,6 +109,13 @@ export const PARTS = [
 
 export const REVIEWS = [
   {
+    author: "Рафик Абутдинов",
+    company: "Авито",
+    rating: 5,
+    text: "Арболитный щепорез 30 квт. Всё работает хорошо, то что надо было.",
+    date: "7 мая 2025",
+  },
+  {
     author: "Анатолий Бурмакин",
     company: "Авито",
     rating: 5,
