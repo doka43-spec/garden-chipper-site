@@ -62,6 +62,54 @@ function ProductCard({ p, scrollTo }: { p: typeof import("@/components/shared").
   );
 }
 
+function PartCard({ part, scrollTo }: { part: typeof import("@/components/shared").PARTS[0]; scrollTo: (id: string) => void }) {
+  const images = part.images || [];
+  const [imgIdx, setImgIdx] = useState(0);
+  return (
+    <div className="group border border-border bg-coal/60 hover:border-warning/40 hover:bg-coal/80 transition-all cursor-pointer flex flex-col">
+      {images.length > 0 && (
+        <div className="relative h-40 bg-steel/20 overflow-hidden flex-shrink-0">
+          <img src={images[imgIdx]} alt={part.name} className="absolute inset-0 w-full h-full object-cover" />
+          {images.length > 1 && (
+            <>
+              <button onClick={(e) => { e.stopPropagation(); setImgIdx((imgIdx - 1 + images.length) % images.length); }} className="absolute left-1 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white w-6 h-6 flex items-center justify-center transition-colors">
+                <Icon name="ChevronLeft" size={14} />
+              </button>
+              <button onClick={(e) => { e.stopPropagation(); setImgIdx((imgIdx + 1) % images.length); }} className="absolute right-1 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white w-6 h-6 flex items-center justify-center transition-colors">
+                <Icon name="ChevronRight" size={14} />
+              </button>
+              <div className="absolute bottom-1 left-1/2 -translate-x-1/2 z-20 flex gap-1">
+                {images.map((_, i) => (
+                  <button key={i} onClick={() => setImgIdx(i)} className={`w-1.5 h-1.5 rounded-full transition-colors ${i === imgIdx ? "bg-warning" : "bg-white/50"}`} />
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      )}
+      <div className="p-5 flex-1 flex flex-col">
+        <div className="flex items-start gap-4">
+          {images.length === 0 && (
+            <div className="w-10 h-10 border border-border flex items-center justify-center group-hover:border-warning/50 transition-colors flex-shrink-0">
+              <Icon name={part.icon} size={18} className="text-warning" fallback="Wrench" />
+            </div>
+          )}
+          <div className="flex-1 min-w-0">
+            <div className="font-oswald font-bold text-foreground text-base leading-tight mb-1">{part.name}</div>
+            <div className="text-xs text-muted-foreground font-mono mb-3">{part.material}</div>
+            <div className="flex items-center justify-between">
+              <span className="font-oswald font-bold text-warning text-sm">{part.price}</span>
+              <button onClick={() => scrollTo("contacts")} className="text-xs text-muted-foreground hover:text-warning font-mono tracking-wider transition-colors">
+                Заказать →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function HeroSection({ scrollTo }: HeroSectionProps) {
   return (
     <>
@@ -131,26 +179,7 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
           <SectionTitle>Запчасти и<br />комплектующие</SectionTitle>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {PARTS.map((part) => (
-              <div key={part.name} className="group border border-border bg-coal/60 p-5 hover:border-warning/40 hover:bg-coal/80 transition-all cursor-pointer">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 border border-border flex items-center justify-center group-hover:border-warning/50 transition-colors flex-shrink-0">
-                    <Icon name={part.icon} size={18} className="text-warning" fallback="Wrench" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="font-oswald font-bold text-foreground text-base leading-tight mb-1">{part.name}</div>
-                    <div className="text-xs text-muted-foreground font-mono mb-3">{part.material}</div>
-                    <div className="flex items-center justify-between">
-                      <span className="font-oswald font-bold text-warning text-sm">{part.price}</span>
-                      <button
-                        onClick={() => scrollTo("contacts")}
-                        className="text-xs text-muted-foreground hover:text-warning font-mono tracking-wider transition-colors"
-                      >
-                        Заказать →
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <PartCard key={part.name} part={part} scrollTo={scrollTo} />
             ))}
           </div>
           <div className="mt-10 bg-coal border border-warning/20 p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
