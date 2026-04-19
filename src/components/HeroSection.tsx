@@ -49,9 +49,15 @@ function ProductCard({ p, scrollTo }: { p: typeof import("@/components/shared").
           ))}
         </div>
         {p.videoUrl && (
-          <a href={p.videoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs text-muted-foreground hover:text-warning font-mono tracking-wider transition-colors mb-4">
+          <a href={p.videoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs text-muted-foreground hover:text-warning font-mono tracking-wider transition-colors mb-2">
             <Icon name="PlayCircle" size={16} className="text-warning" />
             {p.videoUrl.includes("youtube") ? "Смотреть видео на YouTube" : "Смотреть видео на Rutube"}
+          </a>
+        )}
+        {p.videoUrl2 && (
+          <a href={p.videoUrl2} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs text-muted-foreground hover:text-warning font-mono tracking-wider transition-colors mb-4">
+            <Icon name="PlayCircle" size={16} className="text-warning" />
+            {p.videoUrl2.includes("youtube") ? "Смотреть видео на YouTube" : "Смотреть видео на Rutube"}
           </a>
         )}
         <div className="flex items-center justify-between">
