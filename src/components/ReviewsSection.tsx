@@ -230,6 +230,15 @@ export default function ReviewsSection({ scrollTo }: ReviewsSectionProps) {
                 <Icon name="Play" size={12} />
                 Rutube
               </a>
+              <a
+                href="https://youtube.com/@vyatkalux"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-warning font-oswald tracking-wider uppercase transition-colors"
+              >
+                <Icon name="Youtube" size={12} />
+                YouTube
+              </a>
             </div>
           </div>
           <div className="border-t border-border pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
