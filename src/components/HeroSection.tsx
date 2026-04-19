@@ -16,7 +16,7 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${HERO_BG})` }}
         />
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/30" />
         <div className="absolute top-0 left-0 right-0 h-1 bg-warning" />
 
         <div className="relative z-20 max-w-7xl mx-auto px-4 py-20">
