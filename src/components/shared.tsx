@@ -109,6 +109,17 @@ export const PARTS = [
 
 export const REVIEWS = [
   {
+    author: "Анатолий Бурмакин",
+    company: "Авито",
+    rating: 5,
+    text: "Приобрёл измельчитель веток. Достойная техника, удобная в перемещении, управляемое сопло, всё работает без нареканий. Продавец отвечает мгновенно, договорились, оплатил. Рекомендую — хорошая техника для дома.",
+    date: "18 июля 2025",
+    images: [
+      "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/d6f5c2c3-f8de-4875-a9c7-ab7aeb4d59f0.jpg",
+      "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/4abc2f22-cdca-47d8-8133-d238d41832ba.jpg",
+    ],
+  },
+  {
     author: "Александр",
     company: "Авито",
     rating: 5,
