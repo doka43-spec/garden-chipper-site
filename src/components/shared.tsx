@@ -61,6 +61,17 @@ export const PRODUCTS = [
     tagColor: "bg-rust text-white",
   },
   {
+    id: 4,
+    name: "RUBITEL-E5",
+    desc: "Садовый дисковый измельчитель веток диаметром до 65 мм",
+    power: "5.5 кВт",
+    capacity: "до 0.7 м³/ч",
+    weight: "72 кг",
+    price: "65 000 ₽",
+    tag: "НОВИНКА",
+    tagColor: "bg-rust text-white",
+  },
+  {
     id: 3,
     name: "RUBITEL-E2",
     desc: "Садовый дисковый измельчитель веток диаметром до 60 мм",
