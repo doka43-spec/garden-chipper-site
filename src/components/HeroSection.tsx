@@ -11,12 +11,12 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
       {/* HERO */}
       <section id="home" className="relative min-h-[92vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-coal/40 via-coal/20 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-coal/90 via-coal/60 to-coal/30 z-10" />
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${HERO_BG})` }}
         />
-        <div className="absolute inset-0 bg-black/15" />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="absolute top-0 left-0 right-0 h-1 bg-warning" />
 
         <div className="relative z-20 max-w-7xl mx-auto px-4 py-20">
