@@ -36,7 +36,7 @@ export const PRODUCTS = [
     image: "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/44fd17fc-c51a-4a33-9e17-1758fd755aad.JPG",
     name: "RUBITEL-X",
     desc: "Измельчитель веток диаметром до 100 мм",
-    power: "до 1.5 м³/ч",
+    power: "21 л.с.",
     capacity: "до 1.5 м³/ч",
     weight: "156 кг",
     price: "135 000 ₽",
