@@ -68,6 +68,7 @@ export const PRODUCTS = [
     price: "45 000 ₽",
     tag: "PRO",
     tagColor: "bg-steel text-chrome",
+    videoUrl: "https://youtube.com/watch?v=XallFat8aGc",
     images: [
       "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/4ea67fca-6a6a-4c0f-927f-979bbbbc9c6e.JPG",
       "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/b1b89311-5e56-49aa-8100-aa9dcc30fdd2.JPG",
