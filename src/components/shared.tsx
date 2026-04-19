@@ -5,7 +5,7 @@ export const API_URL = "https://functions.poehali.dev/75fbbfe8-a32b-4c93-8ed9-af
 
 export const LOGO_URL = "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/41d29d22-0695-4907-b28c-14ffb2c16e68.png";
 export const LOGO_FILTER = "invert(78%) sepia(60%) saturate(1000%) hue-rotate(350deg) brightness(100%) contrast(95%)";
-export const HERO_BG = "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/files/97003c2d-cc32-4fca-a9d3-1c91f37197c2.jpg";
+export const HERO_BG = "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/f91339dd-d69e-4369-9248-3a4a5add7314.jpeg";
 
 export const NAV_ITEMS = [
   { id: "home", label: "Главная" },
