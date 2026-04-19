@@ -211,7 +211,7 @@ export default function ReviewsSection({ scrollTo }: ReviewsSectionProps) {
                 <div className="text-[10px] text-muted-foreground font-mono tracking-[0.2em]">INDUSTRIAL EQUIPMENT</div>
               </div>
             </div>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 items-center">
               {NAV_ITEMS.map((item) => (
                 <button
                   key={item.id}
@@ -221,6 +221,15 @@ export default function ReviewsSection({ scrollTo }: ReviewsSectionProps) {
                   {item.label}
                 </button>
               ))}
+              <a
+                href="https://rutube.ru/channel/27535132/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-warning font-oswald tracking-wider uppercase transition-colors"
+              >
+                <Icon name="Play" size={12} />
+                Rutube
+              </a>
             </div>
           </div>
           <div className="border-t border-border pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
