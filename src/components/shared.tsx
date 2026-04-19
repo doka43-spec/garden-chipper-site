@@ -70,7 +70,7 @@ export const PRODUCTS = [
 ];
 
 export const PARTS = [
-  { name: "Ножи рубительные сменные", material: "Сталь 65Г", price: "от 1 200 ₽", icon: "Wrench" },
+  { name: "Ножи рубительные сменные для модели Rubitel-S, Rubitel E2, Rubitel E5", material: "Сталь 6ХВ2С", price: "2 700 ₽ за комплект", icon: "Wrench" },
   { name: "Подшипниковые узлы SKF/FAG", material: "Оригинал", price: "от 3 500 ₽", icon: "Settings" },
   { name: "Молотки дробильные", material: "Марганцовистая сталь", price: "от 850 ₽", icon: "Hammer" },
   { name: "Решётки сортировочные", material: "Легированная сталь", price: "от 4 200 ₽", icon: "Grid3x3" },
