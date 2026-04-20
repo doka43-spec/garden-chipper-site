@@ -1,14 +1,52 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import { PRODUCTS } from "@/components/shared";
 
 export default function ProductPage() {
   const { slug } = useParams<{ slug: string }>();
-  const navigate = useNavigate();
   const product = PRODUCTS.find((p) => p.slug === slug);
 
   const [imgIdx, setImgIdx] = useState(0);
+
+  useEffect(() => {
+    if (!product) return;
+    const prevTitle = document.title;
+    document.title = product.seoTitle;
+
+    const setMeta = (name: string, content: string, prop = false) => {
+      const attr = prop ? "property" : "name";
+      let el = document.querySelector(`meta[${attr}="${name}"]`);
+      if (!el) {
+        el = document.createElement("meta");
+        el.setAttribute(attr, name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute("content", content);
+    };
+
+    setMeta("description", product.seoDescription);
+    setMeta("og:title", product.seoTitle, true);
+    setMeta("og:description", product.seoDescription, true);
+    setMeta("og:url", `https://rubitel.ru/product/${product.slug}`, true);
+    setMeta("og:image", product.images?.[0] ?? "", true);
+    setMeta("twitter:title", product.seoTitle);
+    setMeta("twitter:description", product.seoDescription);
+
+    let canonical = document.querySelector<HTMLLinkElement>("link[rel='canonical']");
+    const prevCanonical = canonical?.href ?? "";
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = `https://rubitel.ru/product/${product.slug}`;
+
+    return () => {
+      document.title = prevTitle;
+      if (canonical) canonical.href = prevCanonical;
+    };
+  }, [product]);
 
   if (!product) {
     return (
