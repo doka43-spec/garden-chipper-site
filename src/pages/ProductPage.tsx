@@ -243,19 +243,13 @@ export default function ProductPage() {
                 <div className="font-oswald text-sm font-bold text-muted-foreground tracking-wider uppercase mb-3">Видео</div>
                 <div className="flex gap-2">
                 {product.videoUrl && (
-                  <a href={product.videoUrl} target="_blank" rel="noopener noreferrer" title={product.videoUrl.includes("youtube") ? "Смотреть на YouTube" : "Смотреть на Rutube"} className="flex items-center gap-2 border border-border bg-iron/40 hover:border-warning/50 hover:bg-iron/80 px-3 py-2 transition-colors group">
-                    <Icon name="PlayCircle" size={16} className="text-warning flex-shrink-0" />
-                    <span className="text-xs text-muted-foreground group-hover:text-foreground font-mono tracking-wide transition-colors">
-                      {product.videoUrl.includes("youtube") ? "YouTube" : "Rutube"}
-                    </span>
+                  <a href={product.videoUrl} target="_blank" rel="noopener noreferrer" title={product.videoUrl.includes("youtube") ? "Смотреть на YouTube" : "Смотреть на Rutube"} className="flex items-center border border-border bg-iron/40 hover:border-warning/50 hover:bg-iron/80 p-2 transition-colors">
+                    <Icon name="PlayCircle" size={18} className="text-warning" />
                   </a>
                 )}
                 {product.videoUrl2 && (
-                  <a href={product.videoUrl2} target="_blank" rel="noopener noreferrer" title={product.videoUrl2.includes("youtube") ? "Смотреть на YouTube" : "Смотреть на Rutube"} className="flex items-center gap-2 border border-border bg-iron/40 hover:border-warning/50 hover:bg-iron/80 px-3 py-2 transition-colors group">
-                    <Icon name="PlayCircle" size={16} className="text-warning flex-shrink-0" />
-                    <span className="text-xs text-muted-foreground group-hover:text-foreground font-mono tracking-wide transition-colors">
-                      {product.videoUrl2.includes("youtube") ? "YouTube" : "Rutube"}
-                    </span>
+                  <a href={product.videoUrl2} target="_blank" rel="noopener noreferrer" title={product.videoUrl2.includes("youtube") ? "Смотреть на YouTube" : "Смотреть на Rutube"} className="flex items-center border border-border bg-iron/40 hover:border-warning/50 hover:bg-iron/80 p-2 transition-colors">
+                    <Icon name="PlayCircle" size={18} className="text-warning" />
                   </a>
                 )}
                 </div>
