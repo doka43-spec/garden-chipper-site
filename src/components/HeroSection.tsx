@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import { PRODUCTS, PARTS, SectionLabel, SectionTitle, HERO_BG } from "@/components/shared";
@@ -132,17 +132,11 @@ function PartCard({ part, scrollTo }: { part: typeof import("@/components/shared
 }
 
 export default function HeroSection({ scrollTo }: HeroSectionProps) {
-  const [isMobile, setIsMobile] = useState(false);
   const [catalogExpanded, setCatalogExpanded] = useState(false);
+  const [partsExpanded, setPartsExpanded] = useState(false);
 
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
-
-  const visibleProducts = isMobile && !catalogExpanded ? PRODUCTS.slice(0, 3) : PRODUCTS;
+  const visibleProducts = !catalogExpanded ? PRODUCTS.slice(0, 3) : PRODUCTS;
+  const visibleParts = !partsExpanded ? PARTS.slice(0, 3) : PARTS;
 
   return (
     <>
@@ -230,7 +224,7 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
             ))}
           </div>
           <div className="mt-8 text-center flex flex-col items-center gap-3">
-            {isMobile && !catalogExpanded && PRODUCTS.length > 3 && (
+            {!catalogExpanded && PRODUCTS.length > 3 && (
               <button
                 onClick={() => setCatalogExpanded(true)}
                 className="w-full md:w-auto border border-warning text-warning px-8 py-3 font-oswald font-bold tracking-wider uppercase text-sm hover:bg-warning/10 transition-colors flex items-center justify-center gap-2"
@@ -239,7 +233,7 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
                 Показать все модели ({PRODUCTS.length - 3} ещё)
               </button>
             )}
-            {isMobile && catalogExpanded && (
+            {catalogExpanded && (
               <button
                 onClick={() => setCatalogExpanded(false)}
                 className="w-full md:w-auto border border-border text-muted-foreground px-8 py-3 font-oswald font-bold tracking-wider uppercase text-sm hover:bg-warning/10 transition-colors flex items-center justify-center gap-2"
@@ -261,11 +255,32 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
           <SectionLabel>Оригинальные детали</SectionLabel>
           <SectionTitle>Запчасти и<br />комплектующие</SectionTitle>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {PARTS.map((part) => (
+            {visibleParts.map((part) => (
               <PartCard key={part.name} part={part} scrollTo={scrollTo} />
             ))}
           </div>
-
+          {!partsExpanded && PARTS.length > 3 && (
+            <div className="mt-8 text-center">
+              <button
+                onClick={() => setPartsExpanded(true)}
+                className="w-full md:w-auto border border-warning text-warning px-8 py-3 font-oswald font-bold tracking-wider uppercase text-sm hover:bg-warning/10 transition-colors flex items-center justify-center gap-2 mx-auto"
+              >
+                <Icon name="ChevronDown" size={16} />
+                Показать все запчасти ({PARTS.length - 3} ещё)
+              </button>
+            </div>
+          )}
+          {partsExpanded && (
+            <div className="mt-8 text-center">
+              <button
+                onClick={() => setPartsExpanded(false)}
+                className="w-full md:w-auto border border-border text-muted-foreground px-8 py-3 font-oswald font-bold tracking-wider uppercase text-sm hover:bg-warning/10 transition-colors flex items-center justify-center gap-2 mx-auto"
+              >
+                <Icon name="ChevronUp" size={16} />
+                Свернуть
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
