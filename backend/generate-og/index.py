@@ -24,7 +24,7 @@ def handler(event: dict, context) -> dict:
     logo_orig = Image.open(BytesIO(resp.content)).convert("RGBA")
 
     # Перекрашиваем чёрные пиксели в оранжевые через альфа-канал
-    logo_size = 260
+    logo_size = 420
     logo = logo_orig.resize((logo_size, logo_size), Image.LANCZOS)
     data = logo.getdata()
     new_data = []
@@ -35,21 +35,21 @@ def handler(event: dict, context) -> dict:
             new_data.append((0, 0, 0, 0))
     logo.putdata(new_data)
 
-    logo_x = 90
+    logo_x = 60
     logo_y = (H - logo_size) // 2
     img.paste(logo, (logo_x, logo_y), logo)
 
     # Шрифты
     try:
-        font_title = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 108)
-        font_sub = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 34)
+        font_title = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 148)
+        font_sub = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 58)
     except Exception:
         font_title = ImageFont.load_default()
         font_sub = font_title
 
-    text_x = logo_x + logo_size + 70
-    draw.text((text_x, 195), "RUBITEL", font=font_title, fill=white)
-    draw.text((text_x + 5, 325), "INDUSTRIAL EQUIPMENT", font=font_sub, fill=orange)
+    text_x = logo_x + logo_size + 60
+    draw.text((text_x, 155), "RUBITEL", font=font_title, fill=white)
+    draw.text((text_x + 4, 330), "INDUSTRIAL EQUIPMENT", font=font_sub, fill=orange)
 
     # Оранжевая полоса снизу
     draw.rectangle([(0, H - 10), (W, H)], fill=orange)
