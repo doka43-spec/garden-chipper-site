@@ -312,30 +312,7 @@ export default function ReviewsSection({ scrollTo }: ReviewsSectionProps) {
                 ))}
               </ul>
             </div>
-            <div className="bg-iron border border-border p-8">
-              <h3 className="font-oswald text-xl font-bold text-foreground uppercase tracking-wide mb-5">Сервисная сеть</h3>
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                {[
-                  { city: "Москва", type: "Сервисный центр" },
-                  { city: "СПб", type: "Партнёрский СЦ" },
-                  { city: "Екатеринбург", type: "Сервисный центр" },
-                  { city: "Новосибирск", type: "Выездной сервис" },
-                  { city: "Краснодар", type: "Партнёрский СЦ" },
-                  { city: "Казань", type: "Выездной сервис" },
-                ].map((c) => (
-                  <div key={c.city} className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-warning flex-shrink-0" />
-                    <div>
-                      <div className="font-oswald text-sm font-bold text-foreground">{c.city}</div>
-                      <div className="text-xs text-muted-foreground font-mono">{c.type}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <button onClick={() => scrollTo("contacts")} className="w-full border border-warning/40 text-warning py-3 font-oswald font-bold tracking-wider uppercase text-sm hover:bg-warning/10 transition-colors">
-                Вызвать сервисного инженера
-              </button>
-            </div>
+
           </div>
         </div>
       </section>
