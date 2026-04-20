@@ -21,47 +21,25 @@ export default function AboutSection({ scrollTo }: AboutSectionProps) {
               <p className="text-muted-foreground font-plex leading-relaxed mb-10">
                 Конструкторское бюро — 12 инженеров. Производственная площадь — 4 800 м². Собственная термическая обработка ножей и закалка ключевых узлов.
               </p>
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { icon: "Factory", label: "Российское производство", sub: "Тверская область" },
-                  { icon: "Award", label: "Сертификаты ГОСТ", sub: "Вся линейка продукции" },
-                  { icon: "Users", label: "Команда 120 чел.", sub: "Инженеры и технологи" },
-                  { icon: "Globe", label: "Экспорт в 8 стран", sub: "СНГ и Европа" },
-                ].map((item) => (
-                  <div key={item.label} className="flex items-start gap-3">
-                    <div className="w-8 h-8 border border-warning/40 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Icon name={item.icon} size={14} className="text-warning" fallback="Star" />
-                    </div>
-                    <div>
-                      <div className="font-oswald font-bold text-sm text-foreground">{item.label}</div>
-                      <div className="text-xs text-muted-foreground font-mono mt-0.5">{item.sub}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+
             </div>
-            <div className="relative">
-              <div className="bg-coal border border-border p-8">
-                <div className="font-mono text-xs text-warning/60 mb-6 tracking-wider">// ТЕХНИЧЕСКИЕ ВОЗМОЖНОСТИ</div>
-                {[
-                  { label: "Мощность привода", val: "22–250 кВт", pct: 85 },
-                  { label: "Производительность", val: "до 80 т/ч", pct: 92 },
-                  { label: "Диаметр измельчения", val: "до 350 мм", pct: 70 },
-                  { label: "Ресурс ножей", val: "до 200 ч", pct: 78 },
-                ].map((spec) => (
-                  <div key={spec.label} className="mb-5">
-                    <div className="flex justify-between mb-2">
-                      <span className="font-oswald text-sm text-chrome uppercase tracking-wide">{spec.label}</span>
-                      <span className="font-mono text-sm text-warning font-bold">{spec.val}</span>
-                    </div>
-                    <div className="h-1 bg-steel/50">
-                      <div className="h-full bg-warning transition-all duration-700" style={{ width: `${spec.pct}%` }} />
-                    </div>
+            <div className="grid grid-cols-2 gap-6">
+              {[
+                { icon: "Factory", label: "Российское производство", sub: "Тверская область" },
+                { icon: "Award", label: "Сертификаты ГОСТ", sub: "Вся линейка продукции" },
+                { icon: "Users", label: "Команда 120 чел.", sub: "Инженеры и технологи" },
+                { icon: "Globe", label: "Экспорт в 8 стран", sub: "СНГ и Европа" },
+              ].map((item) => (
+                <div key={item.label} className="bg-coal border border-border p-6 flex items-start gap-3">
+                  <div className="w-8 h-8 border border-warning/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Icon name={item.icon} size={14} className="text-warning" fallback="Star" />
                   </div>
-                ))}
-              </div>
-              <div className="absolute -top-3 -right-3 w-16 h-16 border-t-2 border-r-2 border-warning/30" />
-              <div className="absolute -bottom-3 -left-3 w-16 h-16 border-b-2 border-l-2 border-warning/30" />
+                  <div>
+                    <div className="font-oswald font-bold text-sm text-foreground">{item.label}</div>
+                    <div className="text-xs text-muted-foreground font-mono mt-0.5">{item.sub}</div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
