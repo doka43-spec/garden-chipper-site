@@ -26,19 +26,19 @@ export default function AboutSection({ scrollTo }: AboutSectionProps) {
               </p>
 
             </div>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-3 md:gap-6">
               {[
                 { icon: "Factory", label: "Российское производство", sub: "Кировская область" },
                 { icon: "Award", label: "Сертификаты ГОСТ", sub: "Вся линейка продукции" },
                 { icon: "Users", label: "Команда 10 чел.", sub: "Инженеры и технологи" },
                 { icon: "Globe", label: "Экспорт в 2 страны", sub: "Белоруссия и Казахстан" },
               ].map((item) => (
-                <div key={item.label} className="bg-coal border border-border p-6 flex items-start gap-3">
-                  <div className="w-8 h-8 border border-warning/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <div key={item.label} className="bg-coal border border-border p-3 md:p-6 flex flex-col gap-2 md:flex-row md:items-start md:gap-3">
+                  <div className="w-8 h-8 border border-warning/40 flex items-center justify-center flex-shrink-0">
                     <Icon name={item.icon} size={14} className="text-warning" fallback="Star" />
                   </div>
                   <div>
-                    <div className="font-oswald font-bold text-sm text-foreground">{item.label}</div>
+                    <div className="font-oswald font-bold text-sm text-foreground leading-tight">{item.label}</div>
                     <div className="text-xs text-muted-foreground font-mono mt-0.5">{item.sub}</div>
                   </div>
                 </div>
