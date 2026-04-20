@@ -8,6 +8,13 @@ import Index from "./pages/Index";
 import ProductPage from "./pages/ProductPage";
 import NotFound from "./pages/NotFound";
 
+const SITEMAP_URL = "https://functions.poehali.dev/9ecc47d4-c7f8-4adc-a9ae-e860527288d2";
+
+function SitemapRedirect() {
+  window.location.replace(SITEMAP_URL);
+  return null;
+}
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -19,6 +26,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/product/:slug" element={<ProductPage />} />
+          <Route path="/sitemap.xml" element={<SitemapRedirect />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
