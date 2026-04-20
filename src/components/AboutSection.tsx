@@ -89,19 +89,7 @@ export default function AboutSection({ scrollTo }: AboutSectionProps) {
               </div>
             ))}
           </div>
-          <div className="border border-warning/30 warning-stripe p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <div className="font-mono text-xs text-warning/70 tracking-wider mb-2">ВЫГОДНОЕ ПРЕДЛОЖЕНИЕ</div>
-              <div className="font-oswald text-2xl font-bold text-foreground uppercase">Лизинг от 0% первоначального взноса</div>
-              <div className="text-sm text-muted-foreground font-plex mt-1">Сотрудничаем с 12 лизинговыми компаниями. Одобрение за 2 рабочих дня.</div>
-            </div>
-            <button
-              onClick={() => scrollTo("contacts")}
-              className="flex-shrink-0 bg-warning text-black px-8 py-3 font-oswald font-bold tracking-wider uppercase hover:bg-amber-400 transition-colors"
-            >
-              Рассчитать лизинг
-            </button>
-          </div>
+
         </div>
       </section>
     </>
