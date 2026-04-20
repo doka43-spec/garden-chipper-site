@@ -183,6 +183,7 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
               </span>
               <span>Производство Россия.</span>
               <span>ИП Сухоруков Д.А.</span>
+              <span className="text-xs text-foreground/60">ОГРНИП 319435000055688 от 17.12.2019г</span>
             </div>
 
 
