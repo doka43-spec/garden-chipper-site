@@ -172,7 +172,8 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
                 Rubitel
                 <span className="text-xs border border-warning rounded-full w-4 h-4 flex items-center justify-center leading-none font-bold text-warning" style={{fontSize: '9px'}}>R</span>
               </span>
-              <span>Производство Россия. ИП Сухоруков Д.А.</span>
+              <span>Производство Россия.</span>
+              <span>ИП Сухоруков Д.А.</span>
             </div>
 
             <div className="flex md:hidden gap-2 mb-8 animate-fade-in-up delay-300">
