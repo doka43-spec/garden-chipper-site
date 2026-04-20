@@ -64,9 +64,9 @@ def handler(event: dict, context) -> dict:
         aws_access_key_id=os.environ['AWS_ACCESS_KEY_ID'],
         aws_secret_access_key=os.environ['AWS_SECRET_ACCESS_KEY']
     )
-    s3.put_object(Bucket='files', Key='og/rubitel-og.jpg', Body=buf.read(), ContentType='image/jpeg')
+    s3.put_object(Bucket='files', Key='og/rubitel-og-v3.jpg', Body=buf.read(), ContentType='image/jpeg')
 
-    cdn_url = f"https://cdn.poehali.dev/projects/{os.environ['AWS_ACCESS_KEY_ID']}/bucket/og/rubitel-og.jpg"
+    cdn_url = f"https://cdn.poehali.dev/projects/{os.environ['AWS_ACCESS_KEY_ID']}/bucket/og/rubitel-og-v3.jpg"
     return {
         'statusCode': 200,
         'headers': {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'},
