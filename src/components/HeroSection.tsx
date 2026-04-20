@@ -264,51 +264,27 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
         <div className="max-w-7xl mx-auto px-4">
           <SectionLabel>Регулярное обслуживание</SectionLabel>
           <SectionTitle>Расходные<br />материалы</SectionTitle>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-4">
-              {[
-                { name: "Смазки и масла (Shell, Mobil)", hint: "Для подшипников и приводов", price: "от 450 ₽/кг" },
-                { name: "Фильтры воздушные и масляные", hint: "Оригинальные и аналоги", price: "от 280 ₽/шт" },
-                { name: "Абразивные круги и диски", hint: "Для заточки ножей", price: "от 120 ₽/шт" },
-                { name: "Крепёж специальный (DIN, ГОСТ)", hint: "Болты, гайки, шпильки М12–М42", price: "от 15 ₽/шт" },
-                { name: "Средства защиты (СИЗ)", hint: "Перчатки, очки, беруши", price: "от 90 ₽" },
-              ].map((c) => (
-                <div key={c.name} className="flex items-center justify-between p-4 border border-border hover:border-warning/30 transition-colors bg-iron/40">
-                  <div>
-                    <div className="font-oswald font-bold text-sm text-foreground">{c.name}</div>
-                    <div className="text-xs text-muted-foreground font-mono mt-0.5">{c.hint}</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="font-mono text-sm text-warning font-bold">{c.price}</div>
-                    <button onClick={() => scrollTo("contacts")} className="text-xs text-muted-foreground hover:text-warning transition-colors mt-0.5">
-                      Заказать →
-                    </button>
-                  </div>
+          <div className="space-y-4">
+            {[
+              { name: "Смазки и масла (Shell, Mobil)", hint: "Для подшипников и приводов", price: "от 450 ₽/кг" },
+              { name: "Фильтры воздушные и масляные", hint: "Оригинальные и аналоги", price: "от 280 ₽/шт" },
+              { name: "Абразивные круги и диски", hint: "Для заточки ножей", price: "от 120 ₽/шт" },
+              { name: "Крепёж специальный (DIN, ГОСТ)", hint: "Болты, гайки, шпильки М12–М42", price: "от 15 ₽/шт" },
+              { name: "Средства защиты (СИЗ)", hint: "Перчатки, очки, беруши", price: "от 90 ₽" },
+            ].map((c) => (
+              <div key={c.name} className="flex items-center justify-between p-4 border border-border hover:border-warning/30 transition-colors bg-iron/40">
+                <div>
+                  <div className="font-oswald font-bold text-sm text-foreground">{c.name}</div>
+                  <div className="text-xs text-muted-foreground font-mono mt-0.5">{c.hint}</div>
                 </div>
-              ))}
-            </div>
-            <div className="bg-iron border border-border p-8 flex flex-col justify-between steel-texture">
-              <div>
-                <div className="font-oswald text-3xl font-bold text-foreground mb-2 uppercase">Регламентное<br />обслуживание</div>
-                <div className="w-12 h-1 bg-warning mb-6" />
-                <p className="text-muted-foreground font-plex text-sm leading-relaxed mb-6">
-                  Составим регламент ТО для вашего оборудования и обеспечим поставку всех расходников по графику — без простоев и сюрпризов.
-                </p>
-                <ul className="space-y-3">
-                  {["Ежемесячная поставка по заявке", "Оплата по факту поставки", "Персональный менеджер", "Складской запас под ваш парк"].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-sm text-chrome font-plex">
-                      <div className="w-4 h-4 border border-warning/50 flex items-center justify-center flex-shrink-0">
-                        <div className="w-1.5 h-1.5 bg-warning" />
-                      </div>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                <div className="text-right">
+                  <div className="font-mono text-sm text-warning font-bold">{c.price}</div>
+                  <button onClick={() => scrollTo("contacts")} className="text-xs text-muted-foreground hover:text-warning transition-colors mt-0.5">
+                    Заказать →
+                  </button>
+                </div>
               </div>
-              <button onClick={() => scrollTo("contacts")} className="mt-8 bg-warning text-black py-3 font-oswald font-bold tracking-wider uppercase text-sm hover:bg-amber-400 transition-colors w-full">
-                Заключить договор на ТО
-              </button>
-            </div>
+            ))}
           </div>
         </div>
       </section>
