@@ -222,7 +222,7 @@ export function SectionLabel({ children }: { children: React.ReactNode }) {
 
 export function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="font-oswald text-4xl md:text-5xl font-bold text-foreground uppercase tracking-wide leading-tight mb-10">
+    <h2 className="font-oswald text-4xl md:text-5xl font-bold text-foreground tracking-wide leading-tight mb-10">
       {children}
     </h2>
   );
