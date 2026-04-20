@@ -63,7 +63,7 @@ export default function AboutSection({ scrollTo }: AboutSectionProps) {
               {
                 icon: "CreditCard",
                 title: "Способы оплаты",
-                items: ["Безналичный расчёт (НДС)", "Лизинг — от 0% первый взнос", "Рассрочка до 24 месяцев", "Аккредитив для крупных заказов"],
+                items: ["Безналичный расчёт на карту", "Оплата через Ю-кассу", "Оплата через Робокассу"],
               },
               {
                 icon: "PackageCheck",
