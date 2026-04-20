@@ -31,7 +31,7 @@ def handler(event: dict, context) -> dict:
     if method == "GET":
         conn = get_conn()
         rows = conn.run(
-            f"SELECT id, author, rating, text, created_at, images FROM {SCHEMA}.reviews ORDER BY created_at DESC"
+            f"SELECT id, author, rating, text, created_at, images FROM {SCHEMA}.reviews WHERE hidden IS NOT TRUE ORDER BY created_at DESC"
         )
         conn.close()
         reviews = [
