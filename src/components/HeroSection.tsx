@@ -61,9 +61,9 @@ function ProductCard({ p, scrollTo }: { p: typeof import("@/components/shared").
             {p.videoUrl2.includes("youtube") ? "Смотреть видео на YouTube" : "Смотреть видео на Rutube"}
           </a>
         )}
-        <div className="flex items-center justify-between gap-2">
-          <div className="font-oswald text-xl font-bold text-foreground">{p.price}</div>
-          <div className="flex gap-2">
+        <div className="flex items-center justify-between gap-2 flex-wrap">
+          <div className="font-oswald text-base font-bold text-foreground whitespace-nowrap">{p.price}</div>
+          <div className="flex gap-2 flex-shrink-0">
             <Link
               to={`/product/${p.slug}`}
               className="border border-warning/50 text-warning px-3 py-2 text-xs font-oswald font-bold tracking-wider uppercase hover:bg-warning/10 transition-colors"
