@@ -28,10 +28,10 @@ export default function AboutSection({ scrollTo }: AboutSectionProps) {
             </div>
             <div className="grid grid-cols-2 gap-6">
               {[
-                { icon: "Factory", label: "Российское производство", sub: "Тверская область" },
+                { icon: "Factory", label: "Российское производство", sub: "Кировская область" },
                 { icon: "Award", label: "Сертификаты ГОСТ", sub: "Вся линейка продукции" },
-                { icon: "Users", label: "Команда 120 чел.", sub: "Инженеры и технологи" },
-                { icon: "Globe", label: "Экспорт в 8 стран", sub: "СНГ и Европа" },
+                { icon: "Users", label: "Команда 10 чел.", sub: "Инженеры и технологи" },
+                { icon: "Globe", label: "Экспорт в 2 страны", sub: "Белоруссия и Казахстан" },
               ].map((item) => (
                 <div key={item.label} className="bg-coal border border-border p-6 flex items-start gap-3">
                   <div className="w-8 h-8 border border-warning/40 flex items-center justify-center flex-shrink-0 mt-0.5">
