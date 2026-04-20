@@ -42,16 +42,12 @@ export default function Index() {
       <header className="sticky top-0 z-50 bg-iron border-b border-border shadow-lg shadow-black/40">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollTo("home")}>
-            <svg width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* Круг с тремя разрывами */}
-              <path d="M50 8 A42 42 0 0 1 88 62" stroke="#F59E0B" strokeWidth="8" strokeLinecap="butt" fill="none"/>
-              <path d="M83 75 A42 42 0 0 1 17 75" stroke="#F59E0B" strokeWidth="8" strokeLinecap="butt" fill="none"/>
-              <path d="M12 62 A42 42 0 0 1 50 8" stroke="#F59E0B" strokeWidth="8" strokeLinecap="butt" fill="none"/>
-              {/* Буква А */}
-              <line x1="50" y1="18" x2="25" y2="75" stroke="#F59E0B" strokeWidth="8" strokeLinecap="square"/>
-              <line x1="50" y1="18" x2="75" y2="75" stroke="#F59E0B" strokeWidth="8" strokeLinecap="square"/>
-              <line x1="33" y1="55" x2="67" y2="55" stroke="#F59E0B" strokeWidth="7" strokeLinecap="square"/>
-            </svg>
+            <img
+              src="https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/6b67ee50-70c7-45fa-a36e-ef28f9047b4d.png"
+              alt="Rubitel"
+              className="w-9 h-9 object-contain"
+              style={{ filter: "invert(78%) sepia(60%) saturate(1000%) hue-rotate(350deg) brightness(100%) contrast(95%)" }}
+            />
             <div>
               <div className="font-oswald text-lg font-bold text-foreground tracking-wider leading-none flex items-center gap-1">
                 Rubitel
