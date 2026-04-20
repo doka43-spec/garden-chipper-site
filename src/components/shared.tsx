@@ -100,6 +100,7 @@ export const PRODUCTS = [
 
 export const PARTS = [
   { name: "Ножи рубительные сменные для модели Rubitel-S, Rubitel E2, Rubitel E5", material: "Сталь 6ХВ2С", price: "2 700 ₽ за комплект", icon: "Wrench", images: ["https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/a419a2bc-5f85-4811-bf82-e5698e20cee1.png", "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/9408ce77-bbd9-4531-989f-87b830a86e36.jpg", "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/e247701f-3373-4569-818f-711a4492cb11.jpg", "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/0e5c7b10-65db-4bf0-90ac-f8901fc43261.JPG", "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/ac291e65-84f1-48ef-9a0a-2fcc7b674571.JPG"] },
+  { name: "Ножи рубительные сменные для модели Rubitel-X", material: "Сталь 6ХВ2С", price: "5 000 ₽ за комплект (2шт)", icon: "Wrench" },
   { name: "Подшипниковые узлы SKF/FAG", material: "Оригинал", price: "от 3 500 ₽", icon: "Settings" },
   { name: "Молотки дробильные", material: "Марганцовистая сталь", price: "от 850 ₽", icon: "Hammer" },
   { name: "Решётки сортировочные", material: "Легированная сталь", price: "от 4 200 ₽", icon: "Grid3x3" },
