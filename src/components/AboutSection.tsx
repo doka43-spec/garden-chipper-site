@@ -14,7 +14,7 @@ export default function AboutSection({ scrollTo }: AboutSectionProps) {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <SectionLabel>О нас</SectionLabel>
-              <SectionTitle>Производство<br />с характером</SectionTitle>
+              <SectionTitle>Производство</SectionTitle>
               <p className="text-muted-foreground font-plex leading-relaxed mb-6">
                 Мы выпускаем промышленные измельчители с 2009 года на собственном производстве в России. Производство находится в Кировской области по адресу: посёлок Торфяной, ул. Транспортная 13б и 15.
               </p>
