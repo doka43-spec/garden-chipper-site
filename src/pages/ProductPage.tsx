@@ -134,7 +134,7 @@ export default function ProductPage() {
             <div>
               <div className="font-oswald text-lg font-bold text-foreground tracking-wider leading-none flex items-center gap-1">
                 Rubitel
-                <span className="border border-foreground rounded-full w-3.5 h-3.5 flex items-center justify-center leading-none font-bold text-foreground" style={{ fontSize: "8px" }}>R</span>
+                <span className="border border-white/70 rounded-full w-3.5 h-3.5 flex items-center justify-center leading-none font-bold text-white/70" style={{ fontSize: "8px" }}>R</span>
               </div>
               <div className="text-[10px] text-muted-foreground font-mono tracking-[0.2em]">INDUSTRIAL EQUIPMENT</div>
             </div>
