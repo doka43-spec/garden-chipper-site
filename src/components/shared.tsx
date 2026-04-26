@@ -160,8 +160,8 @@ export const REVIEWS = [
     text: "Приобрёл измельчитель веток. Достойная техника, удобная в перемещении, управляемое сопло, всё работает без нареканий. Продавец отвечает мгновенно, договорились, оплатил. Рекомендую — хорошая техника для дома.",
     date: "18 июля 2025",
     images: [
-      "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/d6f5c2c3-f8de-4875-a9c7-ab7aeb4d59f0.jpg",
-      "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/4abc2f22-cdca-47d8-8133-d238d41832ba.jpg",
+      "/images/d6f5c2c3-f8de-4875-a9c7-ab7aeb4d59f0.jpg",
+      "/images/4abc2f22-cdca-47d8-8133-d238d41832ba.jpg",
     ],
   },
   {
@@ -171,7 +171,7 @@ export const REVIEWS = [
     text: "Купил измельчитель. Продавец оперативно ответил, оформил доставку. Аппарат сделан добротно, хорошо продуман: ременная передача, удобно перемещать, можно закрепить мешок и перемалывать в него. Наверное, лучший в этой ценовой категории. Продавцу спасибо и процветания!",
     date: "26 августа 2025",
     images: [
-      "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/7cef89ba-50f0-48bf-a8a6-d26ab7d3b18f.jpg",
+      "/images/7cef89ba-50f0-48bf-a8a6-d26ab7d3b18f.jpg",
     ],
   },
   {
@@ -181,7 +181,7 @@ export const REVIEWS = [
     text: "Отличный измельчитель веток, простая, надежная и эффективная конструкция!!! За час переработал целую кучу веток! Намного удобнее чем сжигать. Спасибо Дмитрию за оперативную отправку и консультации!",
     date: "30 августа 2025",
     images: [
-      "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/cae2ed74-2277-4718-931e-d93af861a28d.jpg",
+      "/images/cae2ed74-2277-4718-931e-d93af861a28d.jpg",
     ],
   },
   {
@@ -191,11 +191,11 @@ export const REVIEWS = [
     text: "Прошло уже больше года с момента покупки данного измельчителя, можно оставить объективный отзыв! Отмечу сразу, что несмотря на некоторые особенности, дробилка очень хорошо сконструирована, гравитационная подача веток, качественное железо, надёжные узлы. Занимаюсь спилом деревьев (арбористикой) и хотел именно небольшую дробилку, чтобы можно было поместить в легковой автомобиль, сдробить одно, два дерева для повышения чека своих услуг. Аппарат оправдал мои ожидания в первый же заказ, полностью окупив. Заказывал с двигателем 9 л.с., действительно грызёт всё что проходит в бункерное окно. Были поломки, но в 100% это моя вина, тупые ножи, сухие ветки и т.д. Могу смело рекомендовать данную дробилку. За эти деньги, другой альтернативы и близко нет, уверен что эта дробилка лучшая в своём классе! Дмитрий постоянно на связи, на любые вопросы оперативно отвечает!",
     date: "4 апреля 2025",
     images: [
-      "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/fd4c02f0-1ce6-41e4-b0d8-3a36366b735d.png",
-      "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/1f96f7e3-907c-4582-83db-ce76dbb092ec.png",
-      "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/d0ec39fc-b22e-4289-acf5-6c430a746a4c.png",
-      "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/4bd4d37e-cdcb-47ed-80e2-dfa2a76acf97.png",
-      "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/7deaa25f-221e-4669-95e5-c179acc043ef.jpg",
+      "/images/fd4c02f0-1ce6-41e4-b0d8-3a36366b735d.png",
+      "/images/1f96f7e3-907c-4582-83db-ce76dbb092ec.png",
+      "/images/d0ec39fc-b22e-4289-acf5-6c430a746a4c.png",
+      "/images/4bd4d37e-cdcb-47ed-80e2-dfa2a76acf97.png",
+      "/images/7deaa25f-221e-4669-95e5-c179acc043ef.jpg",
     ],
   },
 ];
@@ -251,10 +251,10 @@ export function ContactForm() {
     setStatus("loading");
     setErrorMsg("");
     try {
-      const res = await fetch(API_URL, {
+      const res = await fetch("/mail.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, phone, message }),
+        body: JSON.stringify({ type: "contact", name, phone, message }),
       });
       const data = await res.json();
       if (res.ok && data.success) {

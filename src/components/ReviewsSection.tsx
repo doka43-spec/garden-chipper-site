@@ -3,7 +3,6 @@ import React from "react";
 import Icon from "@/components/ui/icon";
 import {
   REVIEWS,
-  REVIEWS_API_URL,
   WARRANTY_ITEMS,
   NAV_ITEMS,
   StarRating,
@@ -157,24 +156,7 @@ export default function ReviewsSection({ scrollTo }: ReviewsSectionProps) {
   const [showModal, setShowModal] = useState(false);
   const [allReviews, setAllReviews] = useState(REVIEWS);
 
-  useEffect(() => {
-    fetch(REVIEWS_API_URL)
-      .then((r) => r.json())
-      .then((data) => {
-        if (data.reviews && data.reviews.length > 0) {
-          const dbReviews = data.reviews.map((r: { author: string; rating: number; text: string; date: string; images?: string[] }) => ({
-            author: r.author,
-            rating: r.rating,
-            text: r.text,
-            company: "",
-            date: r.date,
-            images: r.images || [],
-          }));
-          setAllReviews([...dbReviews, ...REVIEWS]);
-        }
-      })
-      .catch(() => {});
-  }, []);
+  useEffect(() => {}, []);
 
   const total = allReviews.length;
   const avgRating = total > 0 ? (allReviews.reduce((sum, r) => sum + r.rating, 0) / total).toFixed(1) : "0.0";
@@ -182,10 +164,10 @@ export default function ReviewsSection({ scrollTo }: ReviewsSectionProps) {
   const starTotal = starCounts.reduce((a, b) => a + b, 0);
 
   const handleNewReview = async (r: { author: string; rating: number; text: string }) => {
-    await fetch(REVIEWS_API_URL, {
+    await fetch("/mail.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(r),
+      body: JSON.stringify({ type: "review", ...r }),
     }).catch(() => {});
     const today = new Date();
     const date = today.toLocaleDateString("ru-RU", { day: "numeric", month: "long", year: "numeric" });
