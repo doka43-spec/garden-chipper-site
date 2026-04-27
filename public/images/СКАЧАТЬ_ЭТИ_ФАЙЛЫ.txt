@@ -1,32 +1,32 @@
 Скачайте все эти файлы и положите их в папку /images/ на Бегете.
+ВАЖНО: сохранять файлы с именами точно как в ссылке (без изменений регистра).
 
 https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/6b67ee50-70c7-45fa-a36e-ef28f9047b4d.png
-https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/210ec4eb-46b4-446e-96aa-ad1c9ae9ce31.jpg
 https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/f91339dd-d69e-4369-9248-3a4a5add7314.jpeg
 https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/d747d096-586a-444c-9442-5b78dcc4f963.jpeg
 https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/f7e91cd7-a26e-4c07-bacf-8f611c2bce2d.jpg
 https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/b22c03cc-a96d-412c-b495-41ae2c9df9b9.jpg
 https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/aa9c5143-15f3-4714-87d4-c30ae303b182.jpg
 https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/e466c3d3-0fbd-4854-b41e-7444d5c79e70.jpg
-https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/44fd17fc-c51a-4a33-9e17-1758fd755aad.JPG
-https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/83cfac3d-1303-4c1d-ad4c-6ed158398c3e.JPG
-https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/d8dd5a39-c126-4ea5-93eb-522e927de784.JPG
-https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/e6ff12ff-1bef-43b4-a3ec-7a3a1a04915d.JPG
-https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/849d969e-9bb9-4379-86b2-d86a16e9ee75.JPG
-https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/232652a1-7d4f-4a0f-808d-2d0fe61fe4ae.JPG
+https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/44fd17fc-c51a-4a33-9e17-1758fd755aad.jpg
+https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/83cfac3d-1303-4c1d-ad4c-6ed158398c3e.jpg
+https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/d8dd5a39-c126-4ea5-93eb-522e927de784.jpg
+https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/e6ff12ff-1bef-43b4-a3ec-7a3a1a04915d.jpg
+https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/849d969e-9bb9-4379-86b2-d86a16e9ee75.jpg
+https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/232652a1-7d4f-4a0f-808d-2d0fe61fe4ae.jpg
 https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/948beedf-6d04-40bb-81e6-7c70c70ccd00.jpeg
 https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/abc92367-24ee-415d-8b0a-0b8e581cd2cf.jpeg
 https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/8550a2ff-db06-4e3c-aacc-2544970145d8.jpeg
-https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/4ea67fca-6a6a-4c0f-927f-979bbbbc9c6e.JPG
-https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/b1b89311-5e56-49aa-8100-aa9dcc30fdd2.JPG
-https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/15a02b77-5475-4be9-8659-ccfa4370a385.JPG
-https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/1fb4fb69-5bf7-430a-8dcc-611702f925ba.JPG
-https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/2cb00263-a375-4620-8943-d96647f6fd4e.JPG
+https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/4ea67fca-6a6a-4c0f-927f-979bbbbc9c6e.jpg
+https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/b1b89311-5e56-49aa-8100-aa9dcc30fdd2.jpg
+https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/15a02b77-5475-4be9-8659-ccfa4370a385.jpg
+https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/1fb4fb69-5bf7-430a-8dcc-611702f925ba.jpg
+https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/2cb00263-a375-4620-8943-d96647f6fd4e.jpg
 https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/a419a2bc-5f85-4811-bf82-e5698e20cee1.png
 https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/9408ce77-bbd9-4531-989f-87b830a86e36.jpg
 https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/e247701f-3373-4569-818f-711a4492cb11.jpg
-https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/0e5c7b10-65db-4bf0-90ac-f8901fc43261.JPG
-https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/ac291e65-84f1-48ef-9a0a-2fcc7b674571.JPG
+https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/0e5c7b10-65db-4bf0-90ac-f8901fc43261.jpg
+https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/ac291e65-84f1-48ef-9a0a-2fcc7b674571.jpg
 https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/279adbae-3649-4886-8ba3-ecd43c36208e.jpg
 https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/a2a2fb08-8019-40a0-bcab-930e461e78f1.jpg
 https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/dfdf785f-fe65-41ac-bfa9-89f97882ccae.jpg
