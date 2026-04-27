@@ -49,12 +49,12 @@ export const PRODUCTS = [
     seoTitle: "Rubitel-X — промышленный измельчитель веток 21 л.с. купить | RUBITEL",
     seoDescription: "Купить промышленный измельчитель веток Rubitel-X (21 л.с., ветки до 100 мм, производительность 1.5 м³/ч). Цена 135 000 ₽. Производство Россия, гарантия 1 год.",
     images: [
-      `${CDN}/44fd17fc-c51a-4a33-9e17-1758fd755aad.JPG`,
-      `${CDN}/83cfac3d-1303-4c1d-ad4c-6ed158398c3e.JPG`,
-      `${CDN}/d8dd5a39-c126-4ea5-93eb-522e927de784.JPG`,
-      `${CDN}/e6ff12ff-1bef-43b4-a3ec-7a3a1a04915d.JPG`,
-      `${CDN}/849d969e-9bb9-4379-86b2-d86a16e9ee75.JPG`,
-      `${CDN}/232652a1-7d4f-4a0f-808d-2d0fe61fe4ae.JPG`,
+      `${CDN}/44fd17fc-c51a-4a33-9e17-1758fd755aad.jpg`,
+      `${CDN}/83cfac3d-1303-4c1d-ad4c-6ed158398c3e.jpg`,
+      `${CDN}/d8dd5a39-c126-4ea5-93eb-522e927de784.jpg`,
+      `${CDN}/e6ff12ff-1bef-43b4-a3ec-7a3a1a04915d.jpg`,
+      `${CDN}/849d969e-9bb9-4379-86b2-d86a16e9ee75.jpg`,
+      `${CDN}/232652a1-7d4f-4a0f-808d-2d0fe61fe4ae.jpg`,
     ],
     videoUrl: "https://rutube.ru/video/3c9950f4b27c254ffd9da94619d50376/",
     videoUrl2: "https://youtube.com/watch?v=O7aN9K8qgww",
@@ -102,17 +102,17 @@ export const PRODUCTS = [
     videoUrl: "https://youtube.com/watch?v=XallFat8aGc",
     videoUrl2: "https://youtube.com/watch?v=umQjeYLiNNs",
     images: [
-      `${CDN}/4ea67fca-6a6a-4c0f-927f-979bbbbc9c6e.JPG`,
-      `${CDN}/b1b89311-5e56-49aa-8100-aa9dcc30fdd2.JPG`,
-      `${CDN}/15a02b77-5475-4be9-8659-ccfa4370a385.JPG`,
-      `${CDN}/1fb4fb69-5bf7-430a-8dcc-611702f925ba.JPG`,
-      `${CDN}/2cb00263-a375-4620-8943-d96647f6fd4e.JPG`,
+      `${CDN}/4ea67fca-6a6a-4c0f-927f-979bbbbc9c6e.jpg`,
+      `${CDN}/b1b89311-5e56-49aa-8100-aa9dcc30fdd2.jpg`,
+      `${CDN}/15a02b77-5475-4be9-8659-ccfa4370a385.jpg`,
+      `${CDN}/1fb4fb69-5bf7-430a-8dcc-611702f925ba.jpg`,
+      `${CDN}/2cb00263-a375-4620-8943-d96647f6fd4e.jpg`,
     ],
   },
 ];
 
 export const PARTS = [
-  { name: "Ножи рубительные сменные для модели Rubitel-S, Rubitel E2, Rubitel E5", material: "Сталь 6ХВ2С", price: "2 700 ₽ за комплект (2шт)", icon: "Wrench", images: [`${CDN}/a419a2bc-5f85-4811-bf82-e5698e20cee1.png`, `${CDN}/9408ce77-bbd9-4531-989f-87b830a86e36.jpg`, `${CDN}/e247701f-3373-4569-818f-711a4492cb11.jpg`, `${CDN}/0e5c7b10-65db-4bf0-90ac-f8901fc43261.JPG`, `${CDN}/ac291e65-84f1-48ef-9a0a-2fcc7b674571.JPG`] },
+  { name: "Ножи рубительные сменные для модели Rubitel-S, Rubitel E2, Rubitel E5", material: "Сталь 6ХВ2С", price: "2 700 ₽ за комплект (2шт)", icon: "Wrench", images: [`${CDN}/a419a2bc-5f85-4811-bf82-e5698e20cee1.png`, `${CDN}/9408ce77-bbd9-4531-989f-87b830a86e36.jpg`, `${CDN}/e247701f-3373-4569-818f-711a4492cb11.jpg`, `${CDN}/0e5c7b10-65db-4bf0-90ac-f8901fc43261.jpg`, `${CDN}/ac291e65-84f1-48ef-9a0a-2fcc7b674571.jpg`] },
   { name: "Ножи рубительные сменные для модели Rubitel-X", material: "Сталь 6ХВ2С", price: "5 000 ₽ за комплект (2шт)", icon: "Wrench", images: [`${CDN}/279adbae-3649-4886-8ba3-ecd43c36208e.jpg`] },
 
 ];
