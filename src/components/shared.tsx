@@ -209,6 +209,96 @@ export function SectionTitle({ children, className = "" }: SectionTitleProps) {
   );
 }
 
+export const WARRANTY_ITEMS = [
+  { icon: "Shield", title: "Гарантия 1 год", desc: "На всё оборудование собственного производства" },
+  { icon: "Wrench", title: "Сервисное обслуживание", desc: "Ремонт и замена запчастей в кратчайшие сроки" },
+  { icon: "Truck", title: "Доставка по России", desc: "Транспортными компаниями до вашего города" },
+  { icon: "Phone", title: "Поддержка 24/7", desc: "Консультации по телефону и мессенджерам" },
+];
+
+export function StarRating({ rating }: { rating: number }) {
+  return (
+    <div className="flex gap-0.5">
+      {[1, 2, 3, 4, 5].map((s) => (
+        <span key={s} style={{ color: s <= rating ? "var(--warning, #f59e0b)" : "#444", fontSize: "14px" }}>★</span>
+      ))}
+    </div>
+  );
+}
+
+export function ContactForm() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    await fetch("/mail.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ type: "contact", name, phone, message }),
+    }).catch(() => {});
+    setLoading(false);
+    setSent(true);
+  };
+
+  if (sent) {
+    return (
+      <div className="bg-coal border border-border p-8 flex flex-col items-center justify-center text-center h-full min-h-[260px]">
+        <Icon name="CheckCircle" size={48} className="text-warning mb-4" />
+        <div className="font-oswald text-2xl font-bold text-foreground mb-2">Заявка отправлена!</div>
+        <div className="text-sm text-muted-foreground font-plex">Мы свяжемся с вами в ближайшее время.</div>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="bg-coal border border-border p-8 flex flex-col gap-4">
+      <div className="font-oswald text-xl font-bold text-foreground mb-2">Оставить заявку</div>
+      <div>
+        <label className="text-xs font-mono text-muted-foreground tracking-wider uppercase mb-1.5 block">Ваше имя</label>
+        <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Иван Иванов"
+          required
+          className="w-full bg-iron border border-border px-4 py-3 text-sm text-foreground font-plex focus:outline-none focus:border-warning/50 transition-colors placeholder:text-muted-foreground/40"
+        />
+      </div>
+      <div>
+        <label className="text-xs font-mono text-muted-foreground tracking-wider uppercase mb-1.5 block">Телефон</label>
+        <input
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          placeholder="+7 (___) ___-__-__"
+          required
+          className="w-full bg-iron border border-border px-4 py-3 text-sm text-foreground font-plex focus:outline-none focus:border-warning/50 transition-colors placeholder:text-muted-foreground/40"
+        />
+      </div>
+      <div>
+        <label className="text-xs font-mono text-muted-foreground tracking-wider uppercase mb-1.5 block">Сообщение</label>
+        <textarea
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder="Интересующая модель, вопросы..."
+          rows={3}
+          className="w-full bg-iron border border-border px-4 py-3 text-sm text-foreground font-plex focus:outline-none focus:border-warning/50 transition-colors resize-none placeholder:text-muted-foreground/40"
+        />
+      </div>
+      <button
+        type="submit"
+        disabled={loading}
+        className="bg-warning text-black px-6 py-3 font-oswald font-bold tracking-wider uppercase text-sm hover:bg-amber-400 transition-colors disabled:opacity-60"
+      >
+        {loading ? "Отправка..." : "Отправить заявку"}
+      </button>
+    </form>
+  );
+}
+
 export function PartsCard({ part }: { part: typeof PARTS[0] }) {
   const images = part.images || [];
   const [imgIdx, setImgIdx] = useState(0);
