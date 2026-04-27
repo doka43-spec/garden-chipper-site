@@ -126,7 +126,7 @@ export default function ProductPage() {
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-3">
             <img
-              src="https://cdn.jsdelivr.net/gh/doka43-spec/rubitel-images/6b67ee50-70c7-45fa-a36e-ef28f9047b4d.png"
+              src="https://cdn.jsdelivr.net/gh/doka43-spec/rubitel-images/logo.png"
               alt="Rubitel"
               className="w-9 h-9 object-contain"
               style={{ filter: "invert(78%) sepia(60%) saturate(1000%) hue-rotate(350deg) brightness(100%) contrast(95%)" }}
