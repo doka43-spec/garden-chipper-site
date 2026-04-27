@@ -43,7 +43,7 @@ export default function Index() {
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollTo("home")}>
             <img
-              src="/images/6b67ee50-70c7-45fa-a36e-ef28f9047b4d.png"
+              src="https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket/6b67ee50-70c7-45fa-a36e-ef28f9047b4d.png"
               alt="Rubitel"
               className="w-9 h-9 object-contain"
               style={{ filter: "invert(78%) sepia(60%) saturate(1000%) hue-rotate(350deg) brightness(100%) contrast(95%)" }}
