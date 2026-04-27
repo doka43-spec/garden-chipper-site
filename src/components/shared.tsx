@@ -4,9 +4,10 @@ import Icon from "@/components/ui/icon";
 export const API_URL = "https://functions.poehali.dev/75fbbfe8-a32b-4c93-8ed9-af82c8971d16";
 export const REVIEWS_API_URL = "https://functions.poehali.dev/6b660005-abf4-4f14-af7c-d8689df6b761";
 
-export const LOGO_URL = "/images/210ec4eb-46b4-446e-96aa-ad1c9ae9ce31.jpg";
+const CDN = "https://cdn.poehali.dev/projects/30589419-8040-421a-8f96-70e5f7c9160c/bucket";
+export const LOGO_URL = `${CDN}/210ec4eb-46b4-446e-96aa-ad1c9ae9ce31.jpg`;
 export const LOGO_FILTER = "invert(1) sepia(1) saturate(5) hue-rotate(5deg) brightness(1.1)";
-export const HERO_BG = "/images/f91339dd-d69e-4369-9248-3a4a5add7314.jpeg";
+export const HERO_BG = `${CDN}/f91339dd-d69e-4369-9248-3a4a5add7314.jpeg`;
 
 export const NAV_ITEMS = [
   { id: "home", label: "Главная" },
@@ -35,11 +36,11 @@ export const PRODUCTS = [
     videoUrl: "https://rutube.ru/video/594cefcea706a939d8095ebd07d20e3c/",
     videoUrl2: "https://youtube.com/watch?v=r2s1Y8QbDt8",
     images: [
-      "/images/d747d096-586a-444c-9442-5b78dcc4f963.jpeg",
-      "/images/f7e91cd7-a26e-4c07-bacf-8f611c2bce2d.jpg",
-      "/images/b22c03cc-a96d-412c-b495-41ae2c9df9b9.jpg",
-      "/images/aa9c5143-15f3-4714-87d4-c30ae303b182.jpg",
-      "/images/e466c3d3-0fbd-4854-b41e-7444d5c79e70.jpg",
+      `${CDN}/d747d096-586a-444c-9442-5b78dcc4f963.jpeg`,
+      `${CDN}/f7e91cd7-a26e-4c07-bacf-8f611c2bce2d.jpg`,
+      `${CDN}/b22c03cc-a96d-412c-b495-41ae2c9df9b9.jpg`,
+      `${CDN}/aa9c5143-15f3-4714-87d4-c30ae303b182.jpg`,
+      `${CDN}/e466c3d3-0fbd-4854-b41e-7444d5c79e70.jpg`,
     ],
   },
   {
@@ -48,12 +49,12 @@ export const PRODUCTS = [
     seoTitle: "Rubitel-X — промышленный измельчитель веток 21 л.с. купить | RUBITEL",
     seoDescription: "Купить промышленный измельчитель веток Rubitel-X (21 л.с., ветки до 100 мм, производительность 1.5 м³/ч). Цена 135 000 ₽. Производство Россия, гарантия 1 год.",
     images: [
-      "/images/44fd17fc-c51a-4a33-9e17-1758fd755aad.JPG",
-      "/images/83cfac3d-1303-4c1d-ad4c-6ed158398c3e.JPG",
-      "/images/d8dd5a39-c126-4ea5-93eb-522e927de784.JPG",
-      "/images/e6ff12ff-1bef-43b4-a3ec-7a3a1a04915d.JPG",
-      "/images/849d969e-9bb9-4379-86b2-d86a16e9ee75.JPG",
-      "/images/232652a1-7d4f-4a0f-808d-2d0fe61fe4ae.JPG",
+      `${CDN}/44fd17fc-c51a-4a33-9e17-1758fd755aad.JPG`,
+      `${CDN}/83cfac3d-1303-4c1d-ad4c-6ed158398c3e.JPG`,
+      `${CDN}/d8dd5a39-c126-4ea5-93eb-522e927de784.JPG`,
+      `${CDN}/e6ff12ff-1bef-43b4-a3ec-7a3a1a04915d.JPG`,
+      `${CDN}/849d969e-9bb9-4379-86b2-d86a16e9ee75.JPG`,
+      `${CDN}/232652a1-7d4f-4a0f-808d-2d0fe61fe4ae.JPG`,
     ],
     videoUrl: "https://rutube.ru/video/3c9950f4b27c254ffd9da94619d50376/",
     videoUrl2: "https://youtube.com/watch?v=O7aN9K8qgww",
@@ -80,9 +81,9 @@ export const PRODUCTS = [
     tag: "НОВИНКА",
     tagColor: "bg-rust text-white",
     images: [
-      "/images/948beedf-6d04-40bb-81e6-7c70c70ccd00.jpeg",
-      "/images/abc92367-24ee-415d-8b0a-0b8e581cd2cf.jpeg",
-      "/images/8550a2ff-db06-4e3c-aacc-2544970145d8.jpeg",
+      `${CDN}/948beedf-6d04-40bb-81e6-7c70c70ccd00.jpeg`,
+      `${CDN}/abc92367-24ee-415d-8b0a-0b8e581cd2cf.jpeg`,
+      `${CDN}/8550a2ff-db06-4e3c-aacc-2544970145d8.jpeg`,
     ],
   },
   {
@@ -101,18 +102,18 @@ export const PRODUCTS = [
     videoUrl: "https://youtube.com/watch?v=XallFat8aGc",
     videoUrl2: "https://youtube.com/watch?v=umQjeYLiNNs",
     images: [
-      "/images/4ea67fca-6a6a-4c0f-927f-979bbbbc9c6e.JPG",
-      "/images/b1b89311-5e56-49aa-8100-aa9dcc30fdd2.JPG",
-      "/images/15a02b77-5475-4be9-8659-ccfa4370a385.JPG",
-      "/images/1fb4fb69-5bf7-430a-8dcc-611702f925ba.JPG",
-      "/images/2cb00263-a375-4620-8943-d96647f6fd4e.JPG",
+      `${CDN}/4ea67fca-6a6a-4c0f-927f-979bbbbc9c6e.JPG`,
+      `${CDN}/b1b89311-5e56-49aa-8100-aa9dcc30fdd2.JPG`,
+      `${CDN}/15a02b77-5475-4be9-8659-ccfa4370a385.JPG`,
+      `${CDN}/1fb4fb69-5bf7-430a-8dcc-611702f925ba.JPG`,
+      `${CDN}/2cb00263-a375-4620-8943-d96647f6fd4e.JPG`,
     ],
   },
 ];
 
 export const PARTS = [
-  { name: "Ножи рубительные сменные для модели Rubitel-S, Rubitel E2, Rubitel E5", material: "Сталь 6ХВ2С", price: "2 700 ₽ за комплект (2шт)", icon: "Wrench", images: ["/images/a419a2bc-5f85-4811-bf82-e5698e20cee1.png", "/images/9408ce77-bbd9-4531-989f-87b830a86e36.jpg", "/images/e247701f-3373-4569-818f-711a4492cb11.jpg", "/images/0e5c7b10-65db-4bf0-90ac-f8901fc43261.JPG", "/images/ac291e65-84f1-48ef-9a0a-2fcc7b674571.JPG"] },
-  { name: "Ножи рубительные сменные для модели Rubitel-X", material: "Сталь 6ХВ2С", price: "5 000 ₽ за комплект (2шт)", icon: "Wrench", images: ["/images/279adbae-3649-4886-8ba3-ecd43c36208e.jpg"] },
+  { name: "Ножи рубительные сменные для модели Rubitel-S, Rubitel E2, Rubitel E5", material: "Сталь 6ХВ2С", price: "2 700 ₽ за комплект (2шт)", icon: "Wrench", images: [`${CDN}/a419a2bc-5f85-4811-bf82-e5698e20cee1.png`, `${CDN}/9408ce77-bbd9-4531-989f-87b830a86e36.jpg`, `${CDN}/e247701f-3373-4569-818f-711a4492cb11.jpg`, `${CDN}/0e5c7b10-65db-4bf0-90ac-f8901fc43261.JPG`, `${CDN}/ac291e65-84f1-48ef-9a0a-2fcc7b674571.JPG`] },
+  { name: "Ножи рубительные сменные для модели Rubitel-X", material: "Сталь 6ХВ2С", price: "5 000 ₽ за комплект (2шт)", icon: "Wrench", images: [`${CDN}/279adbae-3649-4886-8ba3-ecd43c36208e.jpg`] },
 
 ];
 
@@ -124,9 +125,9 @@ export const REVIEWS = [
     text: "Покупал у Дмитрия измельчитель веток, и комплект дополнительных ножей к нему. Выполнен измельчитель качественно и продуманно, очень просто производить техническое обслуживание. Дмитрий всегда на связи, готов проконсультировать и подсказать. Дробилка не подвела ни разу! Благодарю Дмитрия за такое качественное и недорогое изделие!",
     date: "7 декабря 2024",
     images: [
-      "/images/a2a2fb08-8019-40a0-bcab-930e461e78f1.jpg",
-      "/images/dfdf785f-fe65-41ac-bfa9-89f97882ccae.jpg",
-      "/images/420771bb-fd59-4a4b-84a0-a9e17e9814e3.jpg",
+      `${CDN}/a2a2fb08-8019-40a0-bcab-930e461e78f1.jpg`,
+      `${CDN}/dfdf785f-fe65-41ac-bfa9-89f97882ccae.jpg`,
+      `${CDN}/420771bb-fd59-4a4b-84a0-a9e17e9814e3.jpg`,
     ],
   },
   {
@@ -136,7 +137,7 @@ export const REVIEWS = [
     text: "Все хорошо.",
     date: "14 апреля 2025",
     images: [
-      "/images/0625aaf2-48fa-4c13-ab8a-f986a25f7e57.jpg",
+      `${CDN}/0625aaf2-48fa-4c13-ab8a-f986a25f7e57.jpg`,
     ],
   },
   {
@@ -160,8 +161,8 @@ export const REVIEWS = [
     text: "Приобрёл измельчитель веток. Достойная техника, удобная в перемещении, управляемое сопло, всё работает без нареканий. Продавец отвечает мгновенно, договорились, оплатил. Рекомендую — хорошая техника для дома.",
     date: "18 июля 2025",
     images: [
-      "/images/d6f5c2c3-f8de-4875-a9c7-ab7aeb4d59f0.jpg",
-      "/images/4abc2f22-cdca-47d8-8133-d238d41832ba.jpg",
+      `${CDN}/d6f5c2c3-f8de-4875-a9c7-ab7aeb4d59f0.jpg`,
+      `${CDN}/4abc2f22-cdca-47d8-8133-d238d41832ba.jpg`,
     ],
   },
   {
@@ -171,7 +172,7 @@ export const REVIEWS = [
     text: "Купил измельчитель. Продавец оперативно ответил, оформил доставку. Аппарат сделан добротно, хорошо продуман: ременная передача, удобно перемещать, можно закрепить мешок и перемалывать в него. Наверное, лучший в этой ценовой категории. Продавцу спасибо и процветания!",
     date: "26 августа 2025",
     images: [
-      "/images/7cef89ba-50f0-48bf-a8a6-d26ab7d3b18f.jpg",
+      `${CDN}/7cef89ba-50f0-48bf-a8a6-d26ab7d3b18f.jpg`,
     ],
   },
   {
@@ -181,7 +182,7 @@ export const REVIEWS = [
     text: "Отличный измельчитель веток, простая, надежная и эффективная конструкция!!! За час переработал целую кучу веток! Намного удобнее чем сжигать. Спасибо Дмитрию за оперативную отправку и консультации!",
     date: "30 августа 2025",
     images: [
-      "/images/cae2ed74-2277-4718-931e-d93af861a28d.jpg",
+      `${CDN}/cae2ed74-2277-4718-931e-d93af861a28d.jpg`,
     ],
   },
   {
