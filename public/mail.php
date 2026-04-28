@@ -64,6 +64,25 @@ $headers .= "Content-Transfer-Encoding: base64\r\n";
 
 $result = mail($to, $subject, base64_encode($body), $headers);
 
+// Сохраняем заявку/отзыв в локальный лог для админки
+$logEntry = [
+    'date' => date('Y-m-d H:i:s'),
+    'type' => $type,
+    'ip'   => $_SERVER['REMOTE_ADDR'] ?? '',
+    'sent' => (bool)$result,
+];
+if ($type === 'review') {
+    $logEntry['author'] = $author ?? '';
+    $logEntry['rating'] = $rating ?? 0;
+    $logEntry['text']   = $text ?? '';
+} else {
+    $logEntry['name']    = $name ?? '';
+    $logEntry['phone']   = $phone ?? '';
+    $logEntry['message'] = $message ?? '';
+}
+$logFile = __DIR__ . '/leads.log';
+@file_put_contents($logFile, json_encode($logEntry, JSON_UNESCAPED_UNICODE) . "\n", FILE_APPEND | LOCK_EX);
+
 if ($result) {
     echo json_encode(['success' => true]);
 } else {

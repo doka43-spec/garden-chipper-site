@@ -3,6 +3,11 @@
     AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json
 </IfModule>
 
+# Защита служебных файлов от прямого доступа
+<FilesMatch "\.(log|env)$">
+    Require all denied
+</FilesMatch>
+
 # Кэширование картинок на 1 год
 <IfModule mod_expires.c>
     ExpiresActive On
