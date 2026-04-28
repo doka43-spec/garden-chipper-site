@@ -313,11 +313,11 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
   return (
     <>
       {/* HERO */}
-      <section id="home" className="relative min-h-[92vh] flex items-center overflow-hidden" style={{backgroundColor: '#2a1f0e'}}>
+      <section id="home" className="relative min-h-[92vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-60" />
         <div className="absolute inset-0 bg-gradient-to-r from-coal/90 via-coal/60 to-transparent z-10" />
         <div
-          className="absolute inset-0 bg-no-repeat bg-cover bg-center md:bg-[60%_center] md:bg-[length:75%]"
+          className="absolute inset-0 bg-no-repeat bg-cover bg-center md:bg-[60%_center]"
           style={{ backgroundImage: `url(${HERO_BG})` }}
         />
         <div className="absolute inset-0 bg-black/20" />
