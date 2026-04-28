@@ -317,7 +317,7 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
         <div className="absolute inset-0 grid-bg opacity-60" />
         <div className="absolute inset-0 bg-gradient-to-r from-coal/60 via-coal/40 to-coal/30 z-10" />
         <div
-          className="absolute inset-0 bg-no-repeat bg-cover bg-center md:bg-[center_right_-100px]"
+          className="absolute inset-0 bg-no-repeat bg-cover bg-center"
           style={{ backgroundImage: `url(${HERO_BG})` }}
         />
         <div className="absolute inset-0 bg-black/40" />
@@ -345,7 +345,7 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
         </div>
 
         <div className="relative z-20 max-w-7xl mx-auto px-4 py-10 md:py-20">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl md:max-w-sm lg:max-w-md">
             <div className="animate-fade-in-up flex items-center gap-3 mb-6">
               <div className="w-12 h-px bg-warning" />
               <span className="font-mono text-xs tracking-[0.3em] text-warning uppercase">ПРОМЫШЛЕННОЕ ОБОРУДОВАНИЕ</span>
