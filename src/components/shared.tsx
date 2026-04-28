@@ -113,7 +113,7 @@ export const PARTS = [
   { name: "Ножи рубительные сменные для модели Rubitel-S, Rubitel E2, Rubitel E5", material: "Сталь 6ХВ2С", price: "2 700 ₽ за комплект (2шт)", priceValue: 2700, icon: "Wrench", images: [`${GH}/knives-s-1.png`, `${GH}/knives-s-2.jpg`, `${GH}/knives-s-3.jpg`, `${GH}/knives-s-4.jpg`, `${GH}/knives-s-5.jpg`] },
   { name: "Ножи рубительные сменные для модели Rubitel-X", material: "Сталь 6ХВ2С", price: "5 000 ₽ за комплект (2шт)", priceValue: 5000, icon: "Wrench", images: [`${GH}/knives-x-1.jpg`] },
   { name: "Доплата за мотор Lifan KP230PRO 9 л.с. (при заказе с маркетплейсов)", material: "Двигатель повышенной мощности", price: "7 500 ₽", priceValue: 7500, icon: "Cog", images: [`${GH}/motor-lifan-1.jpg`, `${GH}/motor-lifan-2.jpg`] },
-  { name: "Ножи рубительные сменные для арболитного щепореза (30 кВт, 37 кВт, 45 кВт)", material: "Сменные ножи для щепореза", price: "3 500 ₽ за 1 шт.", priceValue: 3500, icon: "Wrench", images: [`${GH}/noz-arb-240.jpg`] },
+  { name: "Ножи рубительные сменные для арболитного щепореза (30 кВт, 37 кВт, 45 кВт)", material: "Сталь 6ХВ2С", price: "3 500 ₽ за 1 шт.", priceValue: 3500, icon: "Wrench", images: [`${GH}/noz-arb-240.jpg`] },
 ];
 
 export const REVIEWS = [
