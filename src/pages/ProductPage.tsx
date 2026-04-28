@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import { PRODUCTS } from "@/components/shared";
@@ -8,6 +8,20 @@ export default function ProductPage() {
   const product = PRODUCTS.find((p) => p.slug === slug);
 
   const [imgIdx, setImgIdx] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent, length: number) => {
+    if (touchStartX.current === null) return;
+    const delta = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(delta) > 40) {
+      setImgIdx((prev) => delta > 0 ? (prev + 1) % length : (prev - 1 + length) % length);
+    }
+    touchStartX.current = null;
+  };
 
   useEffect(() => {
     if (!product) return;
@@ -174,7 +188,7 @@ export default function ProductPage() {
         <div className="grid lg:grid-cols-2 gap-12 mb-20">
           {/* IMAGE GALLERY */}
           <div className="space-y-4">
-            <div className="relative bg-steel/40 steel-texture aspect-square flex items-center justify-center overflow-hidden border border-border">
+            <div className="relative bg-steel/40 steel-texture aspect-square flex items-center justify-center overflow-hidden border border-border" onTouchStart={handleTouchStart} onTouchEnd={(e) => handleTouchEnd(e, images.length)}>
               {images.length > 0 ? (
                 <img src={images[imgIdx]} alt={`${product.name} — фото ${imgIdx + 1}`} className="absolute inset-0 w-full h-full object-contain p-4" />
               ) : (
