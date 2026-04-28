@@ -12,6 +12,10 @@ export default function Index() {
   const scrollTo = (id: string) => {
     setActiveNav(id);
     setMobileOpen(false);
+    if (id === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
