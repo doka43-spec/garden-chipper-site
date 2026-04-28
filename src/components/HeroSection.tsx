@@ -5,13 +5,14 @@ import { PRODUCTS, PARTS, SectionLabel, SectionTitle, HERO_BG } from "@/componen
 
 const YOKASSA_URL = "https://functions.poehali.dev/5adaba0c-589d-426d-83f4-a4673a8e2f51";
 
-async function payWithYokassa(amount: number, description: string) {
+async function payWithYokassa(amount: number, description: string, email: string) {
   const res = await fetch(YOKASSA_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       amount,
       description,
+      email,
       return_url: "https://rubitel.ru",
     }),
   });
@@ -25,18 +26,56 @@ async function payWithYokassa(amount: number, description: string) {
 
 function PayButton({ amount, description }: { amount: number; description: string }) {
   const [loading, setLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [email, setEmail] = useState("");
+
+  const handlePay = async () => {
+    if (!email || !email.includes("@")) {
+      alert("Введите корректный email");
+      return;
+    }
+    setLoading(true);
+    setShowModal(false);
+    await payWithYokassa(amount, description, email);
+    setLoading(false);
+  };
+
   return (
-    <button
-      onClick={async () => {
-        setLoading(true);
-        await payWithYokassa(amount, description);
-        setLoading(false);
-      }}
-      disabled={loading}
-      className="bg-green-600 text-white px-4 py-2 text-xs font-oswald font-bold tracking-wider uppercase hover:bg-green-500 transition-colors disabled:opacity-60"
-    >
-      {loading ? "..." : "Оплатить"}
-    </button>
+    <>
+      <button
+        onClick={() => setShowModal(true)}
+        disabled={loading}
+        className="bg-green-600 text-white px-4 py-2 text-xs font-oswald font-bold tracking-wider uppercase hover:bg-green-500 transition-colors disabled:opacity-60"
+      >
+        {loading ? "..." : "Оплатить"}
+      </button>
+
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60" onClick={() => setShowModal(false)}>
+          <div className="bg-white text-black p-6 w-80 shadow-xl" onClick={(e) => e.stopPropagation()}>
+            <div className="font-oswald font-bold text-lg mb-1">Оплата</div>
+            <div className="text-sm text-gray-600 mb-4">Введите email — на него придёт чек</div>
+            <input
+              type="email"
+              placeholder="your@email.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handlePay()}
+              className="w-full border border-gray-300 px-3 py-2 text-sm mb-4 outline-none focus:border-green-600"
+              autoFocus
+            />
+            <div className="flex gap-2 justify-end">
+              <button onClick={() => setShowModal(false)} className="px-4 py-2 text-xs text-gray-500 hover:text-black transition-colors">
+                Отмена
+              </button>
+              <button onClick={handlePay} className="bg-green-600 text-white px-4 py-2 text-xs font-oswald font-bold uppercase hover:bg-green-500 transition-colors">
+                Перейти к оплате
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
