@@ -152,7 +152,7 @@ function ProductCard({ p, scrollTo }: { p: typeof import("@/components/shared").
     <div className="group bg-iron border border-border hover:border-warning/50 transition-all duration-300 flex flex-col">
       <div className="relative bg-steel/40 h-48 steel-texture flex items-center justify-center overflow-hidden" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
         {images.length > 0 ? (
-          <div className="absolute inset-0 flex transition-transform duration-300 ease-in-out" style={{ transform: `translateX(-${imgIdx * 100}%)` }}>
+          <div className="absolute inset-0 flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${imgIdx * 100}%)` }}>
             {images.map((src, i) => (
               <img key={i} src={src} alt={`${p.name} ${i + 1}`} className="w-full h-full object-contain flex-shrink-0" />
             ))}
@@ -251,7 +251,7 @@ function PartCard({ part, scrollTo }: { part: typeof import("@/components/shared
     <div className="group border border-border bg-coal/60 hover:border-warning/40 hover:bg-coal/80 transition-all cursor-pointer flex flex-col">
       {images.length > 0 && (
         <div className="relative h-56 bg-steel/10 overflow-hidden flex-shrink-0" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
-          <div className="absolute inset-0 flex transition-transform duration-300 ease-in-out" style={{ transform: `translateX(-${imgIdx * 100}%)` }}>
+          <div className="absolute inset-0 flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${imgIdx * 100}%)` }}>
             {images.map((src, i) => (
               <img key={i} src={src} alt={`${part.name} ${i + 1}`} className="w-full h-full object-contain p-2 flex-shrink-0" />
             ))}

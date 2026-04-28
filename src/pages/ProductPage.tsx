@@ -190,7 +190,7 @@ export default function ProductPage() {
           <div className="space-y-4">
             <div className="relative bg-steel/40 steel-texture aspect-square flex items-center justify-center overflow-hidden border border-border" onTouchStart={handleTouchStart} onTouchEnd={(e) => handleTouchEnd(e, images.length)}>
               {images.length > 0 ? (
-                <div className="absolute inset-0 flex transition-transform duration-300 ease-in-out" style={{ transform: `translateX(-${imgIdx * 100}%)` }}>
+                <div className="absolute inset-0 flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${imgIdx * 100}%)` }}>
                   {images.map((src, i) => (
                     <img key={i} src={src} alt={`${product.name} — фото ${i + 1}`} className="w-full h-full object-contain p-4 flex-shrink-0" />
                   ))}
