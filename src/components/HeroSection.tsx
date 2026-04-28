@@ -53,7 +53,7 @@ function PayButton({ amount, description, showQty = false }: { amount: number; d
       <button
         onClick={() => { setQty(1); setShowModal(true); }}
         disabled={loading}
-        className="bg-green-600 text-white px-4 py-2 text-xs font-oswald font-bold tracking-wider uppercase hover:bg-green-500 transition-colors disabled:opacity-60"
+        className="bg-green-800 text-white px-4 py-2 text-xs font-oswald font-bold tracking-wider uppercase hover:bg-green-700 transition-colors disabled:opacity-60"
       >
         {loading ? "..." : "Оплатить"}
       </button>
