@@ -3,6 +3,43 @@ import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import { PRODUCTS, PARTS, SectionLabel, SectionTitle, HERO_BG } from "@/components/shared";
 
+const YOKASSA_URL = "https://functions.poehali.dev/5adaba0c-589d-426d-83f4-a4673a8e2f51";
+
+async function payWithYokassa(amount: number, description: string) {
+  const res = await fetch(YOKASSA_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      amount,
+      description,
+      return_url: "https://rubitel.ru",
+    }),
+  });
+  const data = await res.json();
+  if (data.confirmation_url) {
+    window.location.href = data.confirmation_url;
+  } else {
+    alert("Ошибка при создании платежа. Попробуйте позже.");
+  }
+}
+
+function PayButton({ amount, description }: { amount: number; description: string }) {
+  const [loading, setLoading] = useState(false);
+  return (
+    <button
+      onClick={async () => {
+        setLoading(true);
+        await payWithYokassa(amount, description);
+        setLoading(false);
+      }}
+      disabled={loading}
+      className="bg-green-600 text-white px-4 py-2 text-xs font-oswald font-bold tracking-wider uppercase hover:bg-green-500 transition-colors disabled:opacity-60"
+    >
+      {loading ? "..." : "Оплатить"}
+    </button>
+  );
+}
+
 interface HeroSectionProps {
   scrollTo: (id: string) => void;
 }
@@ -63,7 +100,7 @@ function ProductCard({ p, scrollTo }: { p: typeof import("@/components/shared").
         )}
         <div className="flex flex-col gap-2">
           <div className="font-oswald text-base font-bold text-foreground">{p.price}</div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap">
             <Link
               to={`/product/${p.slug}`}
               className="border border-warning/50 text-warning px-3 py-2 text-xs font-oswald font-bold tracking-wider uppercase hover:bg-warning/10 transition-colors"
@@ -76,6 +113,9 @@ function ProductCard({ p, scrollTo }: { p: typeof import("@/components/shared").
             >
               Заказать
             </button>
+            {p.slug === "rubitel-s" && (
+              <PayButton amount={45000} description={`${p.name} — садовый измельчитель веток`} />
+            )}
           </div>
         </div>
       </div>
@@ -118,11 +158,17 @@ function PartCard({ part, scrollTo }: { part: typeof import("@/components/shared
           <div className="flex-1 min-w-0">
             <div className="font-oswald font-bold text-foreground text-base leading-tight mb-1">{part.name}</div>
             <div className="text-xs text-muted-foreground font-mono mb-3">{part.material}</div>
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between gap-2">
               <span className="font-oswald font-bold text-warning text-sm">{part.price}</span>
-              <button onClick={() => scrollTo("contacts")} className="text-xs text-muted-foreground hover:text-warning font-mono tracking-wider transition-colors">
-                Заказать →
-              </button>
+              <div className="flex items-center gap-2">
+                <button onClick={() => scrollTo("contacts")} className="text-xs text-muted-foreground hover:text-warning font-mono tracking-wider transition-colors">
+                  Заказать →
+                </button>
+                <PayButton
+                  amount={part.name.includes("Rubitel-X") ? 5000 : 2700}
+                  description={part.name}
+                />
+              </div>
             </div>
           </div>
         </div>
