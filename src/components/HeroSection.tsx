@@ -6,23 +6,31 @@ import { PRODUCTS, PARTS, SectionLabel, SectionTitle, HERO_BG } from "@/componen
 const YOKASSA_URL = "/pay.php";
 
 async function payWithYokassa(amount: number, description: string, email: string, phone: string, quantity: number = 1) {
-  const res = await fetch(YOKASSA_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      amount,
-      description,
-      email: email || undefined,
-      phone: phone || undefined,
-      return_url: "https://rubitel.ru",
-      quantity,
-    }),
-  });
-  const data = await res.json();
-  if (data.confirmation_url) {
-    window.location.href = data.confirmation_url;
-  } else {
-    alert("Ошибка при создании платежа. Попробуйте позже.");
+  try {
+    const res = await fetch(YOKASSA_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        amount,
+        description,
+        email: email || undefined,
+        phone: phone || undefined,
+        return_url: "https://rubitel.ru",
+        quantity,
+      }),
+    });
+    const text = await res.text();
+    let data: { confirmation_url?: string; error?: string } = {};
+    try { data = JSON.parse(text); } catch { data = { error: text.slice(0, 200) }; }
+
+    if (data.confirmation_url) {
+      window.location.href = data.confirmation_url;
+    } else {
+      const reason = data.error || `HTTP ${res.status}`;
+      alert("Ошибка оплаты: " + reason);
+    }
+  } catch (e) {
+    alert("Сеть недоступна: " + (e instanceof Error ? e.message : "unknown"));
   }
 }
 
