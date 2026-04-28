@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import React from "react";
 import Icon from "@/components/ui/icon";
 import {
@@ -20,11 +20,30 @@ interface ReviewsSectionProps {
 function ReviewCard({ r }: { r: typeof REVIEWS[0] }) {
   const images = r.images || [];
   const [imgIdx, setImgIdx] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const delta = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(delta) > 40) {
+      setImgIdx((prev) => delta > 0 ? (prev + 1) % images.length : (prev - 1 + images.length) % images.length);
+    }
+    touchStartX.current = null;
+  };
+
   return (
     <div className="bg-coal border border-border hover:border-warning/30 transition-colors flex flex-col">
       {images.length > 0 && (
-        <div className="relative h-56 overflow-hidden bg-steel/20">
-          <img src={images[imgIdx]} alt="фото отзыва" className="absolute inset-0 w-full h-full object-contain p-1" />
+        <div className="relative h-56 overflow-hidden bg-steel/20" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+          <div className="absolute inset-0 flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${imgIdx * 100}%)` }}>
+            {images.map((src, i) => (
+              <img key={i} src={src} alt={`фото отзыва ${i + 1}`} className="w-full h-full object-contain p-1 flex-shrink-0" />
+            ))}
+          </div>
           {images.length > 1 && (
             <>
               <button onClick={() => setImgIdx((imgIdx - 1 + images.length) % images.length)} className="absolute left-1 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white w-6 h-6 flex items-center justify-center">
