@@ -5,7 +5,7 @@ import { PRODUCTS, PARTS, SectionLabel, SectionTitle, HERO_BG } from "@/componen
 
 const YOKASSA_URL = "https://functions.poehali.dev/5adaba0c-589d-426d-83f4-a4673a8e2f51";
 
-async function payWithYokassa(amount: number, description: string, email: string, phone: string) {
+async function payWithYokassa(amount: number, description: string, email: string, phone: string, quantity: number = 1) {
   const res = await fetch(YOKASSA_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -15,6 +15,7 @@ async function payWithYokassa(amount: number, description: string, email: string
       email: email || undefined,
       phone: phone || undefined,
       return_url: "https://rubitel.ru",
+      quantity,
     }),
   });
   const data = await res.json();
@@ -43,7 +44,7 @@ function PayButton({ amount, description, showQty = false }: { amount: number; d
     }
     setLoading(true);
     setShowModal(false);
-    await payWithYokassa(totalAmount, `${description} × ${qty} шт.`, email, phone);
+    await payWithYokassa(totalAmount, description, email, phone, qty);
     setLoading(false);
   };
 

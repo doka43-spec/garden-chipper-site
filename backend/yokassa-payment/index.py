@@ -22,10 +22,13 @@ def handler(event: dict, context) -> dict:
 
     body = json.loads(event.get('body', '{}'))
     amount = float(body.get('amount'))
+    quantity = int(body.get('quantity', 1))
     description = body.get('description', 'Оплата заказа')
     email = body.get('email', '')
     phone = body.get('phone', '')
     return_url = body.get('return_url', 'https://rubitel.ru')
+
+    unit_price = round(amount / quantity, 2)
 
     shop_id = '1342002'
     secret_key = os.environ['YOKASSA_SECRET_KEY']
@@ -58,9 +61,9 @@ def handler(event: dict, context) -> dict:
             'items': [
                 {
                     'description': description,
-                    'quantity': '1.00',
+                    'quantity': f'{quantity}.00',
                     'amount': {
-                        'value': f'{amount:.2f}',
+                        'value': f'{unit_price:.2f}',
                         'currency': 'RUB'
                     },
                     'vat_code': 1,
