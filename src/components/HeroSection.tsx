@@ -332,7 +332,7 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
             target="_blank"
             rel="noopener noreferrer"
             title="YouTube"
-            className="flex items-center justify-center bg-red-600 hover:bg-red-500 text-white w-9 h-9 md:w-10 md:h-10 rounded transition-colors shadow-lg"
+            className="flex items-center justify-center bg-red-900/50 hover:bg-red-700/70 text-white/70 hover:text-white w-9 h-9 md:w-10 md:h-10 rounded transition-colors shadow-lg"
           >
             <Icon name="Youtube" size={18} />
           </a>
@@ -341,7 +341,7 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
             target="_blank"
             rel="noopener noreferrer"
             title="Rutube"
-            className="flex items-center justify-center bg-green-700 hover:bg-green-600 text-white w-9 h-9 md:w-10 md:h-10 rounded transition-colors shadow-lg"
+            className="flex items-center justify-center bg-green-900/50 hover:bg-green-700/70 text-white/70 hover:text-white w-9 h-9 md:w-10 md:h-10 rounded transition-colors shadow-lg"
           >
             <Icon name="Play" size={18} />
           </a>
