@@ -151,10 +151,15 @@ function ProductCard({ p, scrollTo }: { p: typeof import("@/components/shared").
   return (
     <div className="group bg-iron border border-border hover:border-warning/50 transition-all duration-300 flex flex-col">
       <div className="relative bg-steel/40 h-48 steel-texture flex items-center justify-center overflow-hidden" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
-        {images.length > 0
-          ? <img src={images[imgIdx]} alt={p.name} className="absolute inset-0 w-full h-full object-contain" />
-          : <Icon name="Cog" size={80} className="text-border group-hover:text-steel transition-colors" />
-        }
+        {images.length > 0 ? (
+          <div className="absolute inset-0 flex transition-transform duration-300 ease-in-out" style={{ transform: `translateX(-${imgIdx * 100}%)` }}>
+            {images.map((src, i) => (
+              <img key={i} src={src} alt={`${p.name} ${i + 1}`} className="w-full h-full object-contain flex-shrink-0" />
+            ))}
+          </div>
+        ) : (
+          <Icon name="Cog" size={80} className="text-border group-hover:text-steel transition-colors" />
+        )}
         {images.length > 1 && (
           <>
             <button onClick={() => setImgIdx((imgIdx - 1 + images.length) % images.length)} className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white w-7 h-7 flex items-center justify-center transition-colors">
@@ -246,7 +251,11 @@ function PartCard({ part, scrollTo }: { part: typeof import("@/components/shared
     <div className="group border border-border bg-coal/60 hover:border-warning/40 hover:bg-coal/80 transition-all cursor-pointer flex flex-col">
       {images.length > 0 && (
         <div className="relative h-56 bg-steel/10 overflow-hidden flex-shrink-0" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
-          <img src={images[imgIdx]} alt={part.name} className="absolute inset-0 w-full h-full object-contain p-2" />
+          <div className="absolute inset-0 flex transition-transform duration-300 ease-in-out" style={{ transform: `translateX(-${imgIdx * 100}%)` }}>
+            {images.map((src, i) => (
+              <img key={i} src={src} alt={`${part.name} ${i + 1}`} className="w-full h-full object-contain p-2 flex-shrink-0" />
+            ))}
+          </div>
           {images.length > 1 && (
             <>
               <button onClick={(e) => { e.stopPropagation(); setImgIdx((imgIdx - 1 + images.length) % images.length); }} className="absolute left-1 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white w-6 h-6 flex items-center justify-center transition-colors">
