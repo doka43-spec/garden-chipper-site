@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Icon from "@/components/ui/icon";
 import { NAV_ITEMS, LOGO_URL, LOGO_FILTER } from "@/components/shared";
 import HeroSection from "@/components/HeroSection";
@@ -8,6 +8,13 @@ import ReviewsSection from "@/components/ReviewsSection";
 export default function Index() {
   const [activeNav, setActiveNav] = useState("home");
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShowScrollTop(window.scrollY > 300);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const scrollTo = (id: string) => {
     setActiveNav(id);
@@ -107,6 +114,15 @@ export default function Index() {
       <HeroSection scrollTo={scrollTo} />
       <AboutSection scrollTo={scrollTo} />
       <ReviewsSection scrollTo={scrollTo} />
+
+      {showScrollTop && (
+        <button
+          onClick={() => scrollTo("home")}
+          className="fixed bottom-6 right-4 z-50 md:hidden bg-warning/80 hover:bg-warning text-black w-11 h-11 flex items-center justify-center shadow-lg transition-all"
+        >
+          <Icon name="ArrowUp" size={20} />
+        </button>
+      )}
     </div>
   );
 }
