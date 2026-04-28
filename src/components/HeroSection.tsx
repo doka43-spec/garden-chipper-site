@@ -317,7 +317,7 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
         <div className="absolute inset-0 grid-bg opacity-60" />
         <div className="absolute inset-0 bg-gradient-to-r from-coal/90 via-coal/60 to-transparent z-10" />
         <div
-          className="absolute inset-0 bg-no-repeat bg-cover bg-center md:bg-[60%_center] md:bg-[length:75%]"
+          className="absolute inset-0 bg-no-repeat bg-[length:160%] bg-[60%_30%] md:bg-cover md:bg-[60%_center] md:bg-[length:75%]"
           style={{ backgroundImage: `url(${HERO_BG})` }}
         />
         <div className="absolute inset-0 hidden md:block" style={{background: 'radial-gradient(ellipse 40% 60% at 85% 45%, rgba(0,0,0,0.55) 0%, transparent 100%)'}} />
