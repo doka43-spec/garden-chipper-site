@@ -24,6 +24,7 @@ def handler(event: dict, context) -> dict:
     amount = float(body.get('amount'))
     description = body.get('description', 'Оплата заказа')
     email = body.get('email', '')
+    phone = body.get('phone', '')
     return_url = body.get('return_url', 'https://rubitel.ru')
 
     shop_id = '1342002'
@@ -31,6 +32,15 @@ def handler(event: dict, context) -> dict:
 
     credentials = base64.b64encode(f'{shop_id}:{secret_key}'.encode()).decode()
     idempotence_key = str(uuid.uuid4())
+
+    customer = {}
+    if email:
+        customer['email'] = email
+    if phone:
+        digits = ''.join(c for c in phone if c.isdigit())
+        if not digits.startswith('7'):
+            digits = '7' + digits.lstrip('8')
+        customer['phone'] = digits
 
     payload_data = {
         'amount': {
@@ -44,9 +54,7 @@ def handler(event: dict, context) -> dict:
         'capture': True,
         'description': description,
         'receipt': {
-            'customer': {
-                'email': email
-            },
+            'customer': customer,
             'items': [
                 {
                     'description': description,

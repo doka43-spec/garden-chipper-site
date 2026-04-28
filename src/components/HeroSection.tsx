@@ -5,14 +5,15 @@ import { PRODUCTS, PARTS, SectionLabel, SectionTitle, HERO_BG } from "@/componen
 
 const YOKASSA_URL = "https://functions.poehali.dev/5adaba0c-589d-426d-83f4-a4673a8e2f51";
 
-async function payWithYokassa(amount: number, description: string, email: string) {
+async function payWithYokassa(amount: number, description: string, email: string, phone: string) {
   const res = await fetch(YOKASSA_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       amount,
       description,
-      email,
+      email: email || undefined,
+      phone: phone || undefined,
       return_url: "https://rubitel.ru",
     }),
   });
@@ -28,15 +29,18 @@ function PayButton({ amount, description }: { amount: number; description: strin
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
 
   const handlePay = async () => {
-    if (!email || !email.includes("@")) {
-      alert("Введите корректный email");
+    const hasEmail = email && email.includes("@");
+    const hasPhone = phone && phone.replace(/\D/g, "").length >= 10;
+    if (!hasEmail && !hasPhone) {
+      alert("Введите email или телефон для получения чека");
       return;
     }
     setLoading(true);
     setShowModal(false);
-    await payWithYokassa(amount, description, email);
+    await payWithYokassa(amount, description, email, phone);
     setLoading(false);
   };
 
@@ -54,15 +58,23 @@ function PayButton({ amount, description }: { amount: number; description: strin
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60" onClick={() => setShowModal(false)}>
           <div className="bg-white text-black p-6 w-80 shadow-xl" onClick={(e) => e.stopPropagation()}>
             <div className="font-oswald font-bold text-lg mb-1">Оплата</div>
-            <div className="text-sm text-gray-600 mb-4">Введите email — на него придёт чек</div>
+            <div className="text-sm text-gray-600 mb-4">Укажите email или телефон — на него придёт чек</div>
             <input
               type="email"
-              placeholder="your@email.com"
+              placeholder="Email (your@email.com)"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className="w-full border border-gray-300 px-3 py-2 text-sm mb-2 outline-none focus:border-green-600"
+              autoFocus
+            />
+            <div className="text-xs text-center text-gray-400 mb-2">или</div>
+            <input
+              type="tel"
+              placeholder="Телефон (+7 900 000 00 00)"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handlePay()}
               className="w-full border border-gray-300 px-3 py-2 text-sm mb-4 outline-none focus:border-green-600"
-              autoFocus
             />
             <div className="flex gap-2 justify-end">
               <button onClick={() => setShowModal(false)} className="px-4 py-2 text-xs text-gray-500 hover:text-black transition-colors">
