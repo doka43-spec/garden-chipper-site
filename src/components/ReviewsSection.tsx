@@ -423,7 +423,7 @@ export default function ReviewsSection({ scrollTo }: ReviewsSectionProps) {
             </div>
           </div>
           <div className="border-t border-border pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="text-xs text-muted-foreground/60 font-mono">© 2009–2026 RUBITEL. Все права защищены.</div>
+            <div className="text-xs text-muted-foreground/60 font-mono">© 2009–2026 RUBITEL. Все права защищены<a href="/admin.php" className="text-muted-foreground/60 hover:text-warning transition-colors no-underline">.</a></div>
             <div className="flex gap-6 text-xs text-muted-foreground/60 font-mono">
               <span className="cursor-pointer hover:text-warning transition-colors">Политика конфиденциальности</span>
               <span className="cursor-pointer hover:text-warning transition-colors">Оферта</span>
