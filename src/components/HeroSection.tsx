@@ -323,24 +323,24 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute top-0 left-0 right-0 h-1 bg-warning" />
 
-        <div className="flex absolute top-6 right-6 z-30 flex-col gap-2">
+        <div className="flex absolute top-6 right-6 z-30 flex-col md:flex-row gap-2">
           <a
             href="https://youtube.com/@vyatkalux"
             target="_blank"
             rel="noopener noreferrer"
             title="YouTube"
-            className="flex items-center justify-center bg-red-900/70 hover:bg-red-600 text-white/80 w-7 h-7 md:w-10 md:h-10 rounded transition-colors shadow-lg md:bg-red-600 md:hover:bg-red-500 md:text-white"
+            className="flex items-center justify-center bg-red-600 hover:bg-red-500 text-white w-9 h-9 md:w-10 md:h-10 rounded transition-colors shadow-lg"
           >
-            <Icon name="Youtube" size={14} />
+            <Icon name="Youtube" size={18} />
           </a>
           <a
             href="https://rutube.ru/channel/27535132/"
             target="_blank"
             rel="noopener noreferrer"
             title="Rutube"
-            className="flex items-center justify-center bg-green-900/70 hover:bg-green-700 text-white/80 w-7 h-7 md:w-10 md:h-10 rounded transition-colors shadow-lg md:bg-green-700 md:hover:bg-green-600 md:text-white"
+            className="flex items-center justify-center bg-green-700 hover:bg-green-600 text-white w-9 h-9 md:w-10 md:h-10 rounded transition-colors shadow-lg"
           >
-            <Icon name="Play" size={14} />
+            <Icon name="Play" size={18} />
           </a>
         </div>
 
