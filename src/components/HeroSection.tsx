@@ -320,8 +320,7 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
           className="absolute inset-0 bg-no-repeat bg-cover bg-center md:bg-[60%_center] md:bg-[length:75%]"
           style={{ backgroundImage: `url(${HERO_BG})` }}
         />
-        <div className="absolute inset-0 bg-black/20" />
-        <div className="absolute inset-0 hidden md:block" style={{boxShadow: 'inset 0 0 200px 120px #111111'}} />
+        <div className="absolute inset-0 hidden md:block" style={{boxShadow: 'inset 0 0 180px 80px #111111'}} />
         <div className="absolute top-0 left-0 right-0 h-1 bg-warning" />
 
         <div className="flex absolute top-6 right-6 z-30 flex-col md:flex-row gap-2">
