@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import { PRODUCTS, PARTS, SectionLabel, SectionTitle, HERO_BG } from "@/components/shared";
 
-const YOKASSA_URL = "https://functions.poehali.dev/5adaba0c-589d-426d-83f4-a4673a8e2f51";
+const YOKASSA_URL = "/pay.php";
 
 async function payWithYokassa(amount: number, description: string, email: string, phone: string, quantity: number = 1) {
   const res = await fetch(YOKASSA_URL, {
