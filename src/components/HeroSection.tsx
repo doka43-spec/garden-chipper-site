@@ -344,7 +344,7 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
           </a>
         </div>
 
-        <div className="relative z-20 max-w-7xl mx-auto px-4 py-20">
+        <div className="relative z-20 max-w-7xl mx-auto px-4 py-10 md:py-20">
           <div className="max-w-2xl">
             <div className="animate-fade-in-up flex items-center gap-3 mb-6">
               <div className="w-12 h-px bg-warning" />
@@ -366,7 +366,7 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
 
 
 
-            <div className="animate-fade-in-up delay-400 mt-14 flex flex-wrap gap-8">
+            <div className="animate-fade-in-up delay-400 mt-6 md:mt-14 flex flex-wrap gap-6 md:gap-8">
               {[
                 { val: "15+", label: "лет на рынке" },
                 { val: "800+", label: "единиц продано" },
@@ -375,7 +375,7 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
 
               ].map((s) => (
                 <div key={s.label}>
-                  <div className="font-oswald text-3xl font-bold text-warning/60 leading-none">{s.val}</div>
+                  <div className="font-oswald text-2xl md:text-3xl font-bold text-warning/60 leading-none">{s.val}</div>
                   <div className="text-xs text-muted-foreground font-mono mt-1 tracking-wider">{s.label}</div>
                 </div>
               ))}
