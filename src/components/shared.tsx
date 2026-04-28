@@ -110,8 +110,9 @@ export const PRODUCTS = [
 ];
 
 export const PARTS = [
-  { name: "Ножи рубительные сменные для модели Rubitel-S, Rubitel E2, Rubitel E5", material: "Сталь 6ХВ2С", price: "2 700 ₽ за комплект (2шт)", icon: "Wrench", images: [`${GH}/knives-s-1.png`, `${GH}/knives-s-2.jpg`, `${GH}/knives-s-3.jpg`, `${GH}/knives-s-4.jpg`, `${GH}/knives-s-5.jpg`] },
-  { name: "Ножи рубительные сменные для модели Rubitel-X", material: "Сталь 6ХВ2С", price: "5 000 ₽ за комплект (2шт)", icon: "Wrench", images: [`${GH}/knives-x-1.jpg`] },
+  { name: "Ножи рубительные сменные для модели Rubitel-S, Rubitel E2, Rubitel E5", material: "Сталь 6ХВ2С", price: "2 700 ₽ за комплект (2шт)", priceValue: 2700, icon: "Wrench", images: [`${GH}/knives-s-1.png`, `${GH}/knives-s-2.jpg`, `${GH}/knives-s-3.jpg`, `${GH}/knives-s-4.jpg`, `${GH}/knives-s-5.jpg`] },
+  { name: "Ножи рубительные сменные для модели Rubitel-X", material: "Сталь 6ХВ2С", price: "5 000 ₽ за комплект (2шт)", priceValue: 5000, icon: "Wrench", images: [`${GH}/knives-x-1.jpg`] },
+  { name: "Доплата за мотор 9 л.с. (при заказе с маркетплейсов)", material: "Двигатель повышенной мощности", price: "7 500 ₽", priceValue: 7500, icon: "Cog", images: [] },
 ];
 
 export const REVIEWS = [

@@ -251,9 +251,9 @@ function PartCard({ part, scrollTo }: { part: typeof import("@/components/shared
                   Заказать →
                 </button>
                 <PayButton
-                  amount={part.name.includes("Rubitel-X") ? 5000 : 2700}
+                  amount={part.priceValue}
                   description={part.name}
-                  showQty
+                  showQty={part.name.includes("Ножи")}
                 />
               </div>
             </div>
