@@ -105,6 +105,7 @@ function PayButton({ amount, description, showQty = false }: { amount: number; d
               value={phone}
               onChange={(e) => {
                 let val = e.target.value.replace(/\D/g, "");
+                if (val === "") { setPhone(""); return; }
                 if (val.startsWith("8")) val = "7" + val.slice(1);
                 if (!val.startsWith("7")) val = "7" + val;
                 val = val.slice(0, 11);
@@ -115,7 +116,6 @@ function PayButton({ amount, description, showQty = false }: { amount: number; d
                 if (val.length >= 9) formatted += "-" + val.slice(9, 11);
                 setPhone(formatted);
               }}
-              onFocus={() => { if (!phone) setPhone("+7 "); }}
               onKeyDown={(e) => e.key === "Enter" && handlePay()}
               className="w-full border border-gray-300 px-3 py-2 text-sm mb-4 outline-none focus:border-green-600"
             />

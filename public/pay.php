@@ -42,6 +42,19 @@ $amount      = isset($body['amount']) ? floatval($body['amount']) : 0;
 $description = isset($body['description']) ? trim($body['description']) : 'Заказ Rubitel';
 $email       = isset($body['email']) ? trim($body['email']) : '';
 $phone       = isset($body['phone']) ? preg_replace('/\D/', '', $body['phone']) : '';
+// Нормализация: 8XXXXXXXXXX → 7XXXXXXXXXX, всегда 11 цифр для РФ
+if ($phone !== '') {
+    if (strlen($phone) === 11 && $phone[0] === '8') {
+        $phone = '7' . substr($phone, 1);
+    }
+    if (strlen($phone) === 10) {
+        $phone = '7' . $phone;
+    }
+    // ЮKassa требует ровно 11 цифр для РФ. Если иначе — не отправляем.
+    if (strlen($phone) !== 11 || $phone[0] !== '7') {
+        $phone = '';
+    }
+}
 $return_url  = isset($body['return_url']) ? trim($body['return_url']) : 'https://rubitel.ru';
 $quantity    = isset($body['quantity']) ? intval($body['quantity']) : 1;
 
