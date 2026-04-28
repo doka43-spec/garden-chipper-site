@@ -321,7 +321,8 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
           style={{ backgroundImage: `url(${HERO_BG})` }}
         />
         <div className="absolute inset-0 bg-black/20" />
-        <div className="absolute inset-0 hidden md:block" style={{boxShadow: 'inset 0 0 120px 80px #2a1f0e'}} />
+        <div className="absolute inset-0 hidden md:block" style={{boxShadow: 'inset 0 0 150px 100px #2a1f0e'}} />
+        <div className="absolute inset-0 hidden md:block" style={{background: 'linear-gradient(to left, #2a1f0e 0%, #2a1f0e 5%, transparent 40%)'}} />
         <div className="absolute top-0 left-0 right-0 h-1 bg-warning" />
 
         <div className="flex absolute top-6 right-6 z-30 flex-col md:flex-row gap-2">
