@@ -344,7 +344,7 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
           </a>
         </div>
 
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 py-10 md:py-20">
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 md:pl-16 py-10 md:py-20">
           <div className="max-w-xs md:max-w-sm lg:max-w-md">
             <div className="animate-fade-in-up flex items-center gap-3 mb-6">
               <div className="w-12 h-px bg-warning" />
