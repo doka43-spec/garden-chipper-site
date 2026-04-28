@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import { PRODUCTS, PARTS, SectionLabel, SectionTitle, HERO_BG } from "@/components/shared";
@@ -212,10 +212,25 @@ function ProductCard({ p, scrollTo }: { p: typeof import("@/components/shared").
 function PartCard({ part, scrollTo }: { part: typeof import("@/components/shared").PARTS[0]; scrollTo: (id: string) => void }) {
   const images = part.images || [];
   const [imgIdx, setImgIdx] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const delta = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(delta) > 40) {
+      setImgIdx((prev) => delta > 0 ? (prev + 1) % images.length : (prev - 1 + images.length) % images.length);
+    }
+    touchStartX.current = null;
+  };
+
   return (
     <div className="group border border-border bg-coal/60 hover:border-warning/40 hover:bg-coal/80 transition-all cursor-pointer flex flex-col">
       {images.length > 0 && (
-        <div className="relative h-56 bg-steel/10 overflow-hidden flex-shrink-0">
+        <div className="relative h-56 bg-steel/10 overflow-hidden flex-shrink-0" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
           <img src={images[imgIdx]} alt={part.name} className="absolute inset-0 w-full h-full object-contain p-2" />
           {images.length > 1 && (
             <>
