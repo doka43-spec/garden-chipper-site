@@ -24,3 +24,12 @@
     RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME}.webp -f
     RewriteRule ^(.+)\.(jpe?g|png)$ $1.$2.webp [T=image/webp,E=accept:1]
 </IfModule>
+
+# React Router: все запросы (кроме существующих файлов и .php) — на index.html
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !\.php$
+    RewriteRule ^ index.html [L]
+</IfModule>
