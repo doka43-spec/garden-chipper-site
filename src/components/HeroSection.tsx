@@ -70,9 +70,21 @@ function PayButton({ amount, description }: { amount: number; description: strin
             <div className="text-xs text-center text-gray-400 mb-2">или</div>
             <input
               type="tel"
-              placeholder="Телефон (+7 900 000 00 00)"
+              placeholder="+7 (___) ___-__-__"
               value={phone}
-              onChange={(e) => setPhone(e.target.value)}
+              onChange={(e) => {
+                let val = e.target.value.replace(/\D/g, "");
+                if (val.startsWith("8")) val = "7" + val.slice(1);
+                if (!val.startsWith("7")) val = "7" + val;
+                val = val.slice(0, 11);
+                let formatted = "+7";
+                if (val.length > 1) formatted += " (" + val.slice(1, 4);
+                if (val.length >= 4) formatted += ") " + val.slice(4, 7);
+                if (val.length >= 7) formatted += "-" + val.slice(7, 9);
+                if (val.length >= 9) formatted += "-" + val.slice(9, 11);
+                setPhone(formatted);
+              }}
+              onFocus={() => { if (!phone) setPhone("+7 "); }}
               onKeyDown={(e) => e.key === "Enter" && handlePay()}
               className="w-full border border-gray-300 px-3 py-2 text-sm mb-4 outline-none focus:border-green-600"
             />
