@@ -25,11 +25,14 @@ async function payWithYokassa(amount: number, description: string, email: string
   }
 }
 
-function PayButton({ amount, description }: { amount: number; description: string }) {
+function PayButton({ amount, description, showQty = false }: { amount: number; description: string; showQty?: boolean }) {
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [qty, setQty] = useState(1);
+
+  const totalAmount = amount * qty;
 
   const handlePay = async () => {
     const hasEmail = email && email.includes("@");
@@ -40,14 +43,14 @@ function PayButton({ amount, description }: { amount: number; description: strin
     }
     setLoading(true);
     setShowModal(false);
-    await payWithYokassa(amount, description, email, phone);
+    await payWithYokassa(totalAmount, `${description} × ${qty} шт.`, email, phone);
     setLoading(false);
   };
 
   return (
     <>
       <button
-        onClick={() => setShowModal(true)}
+        onClick={() => { setQty(1); setShowModal(true); }}
         disabled={loading}
         className="bg-green-600 text-white px-4 py-2 text-xs font-oswald font-bold tracking-wider uppercase hover:bg-green-500 transition-colors disabled:opacity-60"
       >
@@ -58,7 +61,26 @@ function PayButton({ amount, description }: { amount: number; description: strin
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60" onClick={() => setShowModal(false)}>
           <div className="bg-white text-black p-6 w-80 shadow-xl" onClick={(e) => e.stopPropagation()}>
             <div className="font-oswald font-bold text-lg mb-1">Оплата</div>
-            <div className="text-sm text-gray-600 mb-4">Укажите email или телефон — на него придёт чек</div>
+
+            {showQty && (
+              <div className="flex items-center justify-between mb-4 border border-gray-200 p-3">
+                <span className="text-sm text-gray-600">Количество комплектов</span>
+                <div className="flex items-center gap-3">
+                  <button onClick={() => setQty(q => Math.max(1, q - 1))} className="w-7 h-7 border border-gray-300 flex items-center justify-center text-lg font-bold hover:border-green-600 transition-colors">−</button>
+                  <span className="font-oswald font-bold text-base w-4 text-center">{qty}</span>
+                  <button onClick={() => setQty(q => q + 1)} className="w-7 h-7 border border-gray-300 flex items-center justify-center text-lg font-bold hover:border-green-600 transition-colors">+</button>
+                </div>
+              </div>
+            )}
+
+            {showQty && (
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-sm text-gray-500">Итого:</span>
+                <span className="font-oswald font-bold text-green-600 text-base">{totalAmount.toLocaleString("ru-RU")} ₽</span>
+              </div>
+            )}
+
+            <div className="text-sm text-gray-600 mb-3">Укажите email или телефон — на него придёт чек</div>
             <input
               type="email"
               placeholder="Email (your@email.com)"
@@ -230,6 +252,7 @@ function PartCard({ part, scrollTo }: { part: typeof import("@/components/shared
                 <PayButton
                   amount={part.name.includes("Rubitel-X") ? 5000 : 2700}
                   description={part.name}
+                  showQty
                 />
               </div>
             </div>
