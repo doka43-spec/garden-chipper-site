@@ -272,8 +272,8 @@ export default function ReviewsSection({ scrollTo }: ReviewsSectionProps) {
                 <div className="w-12 h-12 border border-warning/30 flex items-center justify-center mx-auto mb-4 group-hover:border-warning transition-colors">
                   <Icon name={w.icon} size={22} className="text-warning" fallback="Shield" />
                 </div>
-                <div className="font-oswald text-4xl font-bold text-warning mb-2">{w.period}</div>
-                <div className="text-xs text-muted-foreground font-plex leading-tight">{w.label}</div>
+                <div className="font-oswald text-base font-bold text-warning mb-2">{w.title}</div>
+                <div className="text-xs text-muted-foreground font-plex leading-tight">{w.desc}</div>
               </div>
             ))}
           </div>
