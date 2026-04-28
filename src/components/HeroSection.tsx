@@ -133,9 +133,24 @@ interface HeroSectionProps {
 function ProductCard({ p, scrollTo }: { p: typeof import("@/components/shared").PRODUCTS[0]; scrollTo: (id: string) => void }) {
   const images = p.images || [];
   const [imgIdx, setImgIdx] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const delta = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(delta) > 40) {
+      setImgIdx((prev) => delta > 0 ? (prev + 1) % images.length : (prev - 1 + images.length) % images.length);
+    }
+    touchStartX.current = null;
+  };
+
   return (
     <div className="group bg-iron border border-border hover:border-warning/50 transition-all duration-300 flex flex-col">
-      <div className="relative bg-steel/40 h-48 steel-texture flex items-center justify-center overflow-hidden">
+      <div className="relative bg-steel/40 h-48 steel-texture flex items-center justify-center overflow-hidden" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
         {images.length > 0
           ? <img src={images[imgIdx]} alt={p.name} className="absolute inset-0 w-full h-full object-contain" />
           : <Icon name="Cog" size={80} className="text-border group-hover:text-steel transition-colors" />
