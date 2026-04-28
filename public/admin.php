@@ -99,12 +99,38 @@ if ($tab === 'payments') {
 // === ВКЛАДКА: ЗАЯВКИ ===
 $leads = [];
 $leadErr = '';
+$leadMsg = '';
 $lead_filter = isset($_GET['type']) ? $_GET['type'] : 'all';
 $total_leads = 0;
 $total_reviews = 0;
 
 if ($tab === 'leads') {
     $logFile = __DIR__ . '/leads.log';
+
+    // Очистка старых записей (старше 6 месяцев)
+    if (isset($_POST['action']) && $_POST['action'] === 'cleanup' && file_exists($logFile)) {
+        $cutoff = strtotime('-6 months');
+        $kept = 0;
+        $removed = 0;
+        $newLines = [];
+        $lines = @file($logFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        if ($lines) {
+            foreach ($lines as $line) {
+                $entry = json_decode($line, true);
+                if (!is_array($entry)) continue;
+                $ts = isset($entry['date']) ? strtotime($entry['date']) : 0;
+                if ($ts && $ts >= $cutoff) {
+                    $newLines[] = $line;
+                    $kept++;
+                } else {
+                    $removed++;
+                }
+            }
+            @file_put_contents($logFile, ($newLines ? implode("\n", $newLines) . "\n" : ''), LOCK_EX);
+        }
+        $leadMsg = "Очистка выполнена. Удалено: $removed, оставлено: $kept.";
+    }
+
     if (file_exists($logFile)) {
         $lines = @file($logFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         if ($lines) {
@@ -162,6 +188,11 @@ if ($tab === 'leads') {
   .empty { text-align: center; padding: 40px; color: #888; }
   .error { background: #fde2e2; color: #a31818; padding: 12px 16px; border-radius: 4px; margin-bottom: 16px; }
   .info { background: #e3f2fd; color: #1565c0; padding: 12px 16px; border-radius: 4px; margin-bottom: 16px; }
+  .success { background: #dcf5e3; color: #0a7c2f; padding: 12px 16px; border-radius: 4px; margin-bottom: 16px; }
+  .filters-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; gap: 12px; flex-wrap: wrap; }
+  .filters-row .filters { margin-bottom: 0; }
+  .btn-cleanup { padding: 6px 14px; background: #fff; border: 1px solid #d33; color: #d33; border-radius: 4px; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .btn-cleanup:hover { background: #d33; color: #fff; }
   .amount { font-weight: 700; font-family: ui-monospace, monospace; }
   .stars { color: #fbb034; font-size: 14px; letter-spacing: 1px; }
   .text-block { white-space: pre-wrap; word-break: break-word; max-width: 400px; }
@@ -270,6 +301,10 @@ if ($tab === 'leads') {
     <div class="info"><?= htmlspecialchars($leadErr) ?></div>
   <?php endif; ?>
 
+  <?php if ($leadMsg): ?>
+    <div class="success"><?= htmlspecialchars($leadMsg) ?></div>
+  <?php endif; ?>
+
   <div class="stats">
     <div class="card blue">
       <div class="label">Заявки (звонки)</div>
@@ -285,10 +320,16 @@ if ($tab === 'leads') {
     </div>
   </div>
 
-  <div class="filters">
-    <a href="?tab=leads&type=all" class="<?= $lead_filter === 'all' ? 'active' : '' ?>">Все</a>
-    <a href="?tab=leads&type=contact" class="<?= $lead_filter === 'contact' ? 'active' : '' ?>">Заявки</a>
-    <a href="?tab=leads&type=review" class="<?= $lead_filter === 'review' ? 'active' : '' ?>">Отзывы</a>
+  <div class="filters-row">
+    <div class="filters">
+      <a href="?tab=leads&type=all" class="<?= $lead_filter === 'all' ? 'active' : '' ?>">Все</a>
+      <a href="?tab=leads&type=contact" class="<?= $lead_filter === 'contact' ? 'active' : '' ?>">Заявки</a>
+      <a href="?tab=leads&type=review" class="<?= $lead_filter === 'review' ? 'active' : '' ?>">Отзывы</a>
+    </div>
+    <form method="POST" onsubmit="return confirm('Удалить все заявки и отзывы старше 6 месяцев? Это действие нельзя отменить.');" style="margin:0;">
+      <input type="hidden" name="action" value="cleanup">
+      <button type="submit" class="btn-cleanup">Очистить старше 6 мес.</button>
+    </form>
   </div>
 
   <?php if (empty($leads)): ?>
