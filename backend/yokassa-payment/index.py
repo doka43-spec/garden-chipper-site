@@ -56,8 +56,17 @@ def handler(event: dict, context) -> dict:
         method='POST'
     )
 
-    with urllib.request.urlopen(req) as resp:
-        result = json.loads(resp.read().decode())
+    try:
+        with urllib.request.urlopen(req) as resp:
+            result = json.loads(resp.read().decode())
+    except urllib.error.HTTPError as e:
+        error_body = e.read().decode()
+        print(f'[YOKASSA ERROR] status={e.code} body={error_body}')
+        return {
+            'statusCode': 502,
+            'headers': {'Access-Control-Allow-Origin': '*'},
+            'body': json.dumps({'error': error_body})
+        }
 
     confirmation_url = result['confirmation']['confirmation_url']
 
