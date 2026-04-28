@@ -55,7 +55,9 @@ def handler(event: dict, context) -> dict:
                         'value': f'{amount:.2f}',
                         'currency': 'RUB'
                     },
-                    'vat_code': 1
+                    'vat_code': 1,
+                    'payment_subject': 'commodity',
+                    'payment_mode': 'full_payment'
                 }
             ]
         }
