@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import React from "react";
 import Icon from "@/components/ui/icon";
 import {
@@ -41,7 +41,7 @@ function ReviewCard({ r }: { r: typeof REVIEWS[0] }) {
         <div className="relative h-56 overflow-hidden bg-steel/20" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
           <div className="absolute inset-0 flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${imgIdx * 100}%)` }}>
             {images.map((src, i) => (
-              <img key={i} src={src} alt={`фото отзыва ${i + 1}`} className="w-full h-full object-contain p-1 flex-shrink-0" />
+              <img key={i} src={src} alt={`фото отзыва ${i + 1}`} loading="lazy" className="w-full h-full object-contain p-1 flex-shrink-0" />
             ))}
           </div>
           {images.length > 1 && (
@@ -174,8 +174,6 @@ export default function ReviewsSection({ scrollTo }: ReviewsSectionProps) {
   const [activeReviewFilter, setActiveReviewFilter] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [allReviews, setAllReviews] = useState(REVIEWS);
-
-  useEffect(() => {}, []);
 
   const total = allReviews.length;
   const avgRating = total > 0 ? (allReviews.reduce((sum, r) => sum + r.rating, 0) / total).toFixed(1) : "0.0";

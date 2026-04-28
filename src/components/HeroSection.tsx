@@ -154,7 +154,7 @@ function ProductCard({ p, scrollTo }: { p: typeof import("@/components/shared").
         {images.length > 0 ? (
           <div className="absolute inset-0 flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${imgIdx * 100}%)` }}>
             {images.map((src, i) => (
-              <img key={i} src={src} alt={`${p.name} ${i + 1}`} className="w-full h-full object-contain flex-shrink-0" />
+              <img key={i} src={src} alt={`${p.name} ${i + 1}`} loading="lazy" className="w-full h-full object-contain flex-shrink-0" />
             ))}
           </div>
         ) : (
@@ -253,7 +253,7 @@ function PartCard({ part, scrollTo }: { part: typeof import("@/components/shared
         <div className="relative h-56 bg-steel/10 overflow-hidden flex-shrink-0" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
           <div className="absolute inset-0 flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${imgIdx * 100}%)` }}>
             {images.map((src, i) => (
-              <img key={i} src={src} alt={`${part.name} ${i + 1}`} className="w-full h-full object-contain p-2 flex-shrink-0" />
+              <img key={i} src={src} alt={`${part.name} ${i + 1}`} loading="lazy" className="w-full h-full object-contain p-2 flex-shrink-0" />
             ))}
           </div>
           {images.length > 1 && (

@@ -192,7 +192,7 @@ export default function ProductPage() {
               {images.length > 0 ? (
                 <div className="absolute inset-0 flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${imgIdx * 100}%)` }}>
                   {images.map((src, i) => (
-                    <img key={i} src={src} alt={`${product.name} — фото ${i + 1}`} className="w-full h-full object-contain p-4 flex-shrink-0" />
+                    <img key={i} src={src} alt={`${product.name} — фото ${i + 1}`} loading={i === 0 ? "eager" : "lazy"} className="w-full h-full object-contain p-4 flex-shrink-0" />
                   ))}
                 </div>
               ) : (
