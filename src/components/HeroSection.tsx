@@ -315,12 +315,12 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
       {/* HERO */}
       <section id="home" className="relative min-h-[92vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-coal/60 via-coal/40 to-coal/30 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-coal/90 via-coal/60 to-transparent z-10" />
         <div
-          className="absolute inset-0 bg-no-repeat bg-cover bg-center"
+          className="absolute inset-0 bg-no-repeat bg-cover bg-center md:bg-[center_right]"
           style={{ backgroundImage: `url(${HERO_BG})` }}
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/20" />
         <div className="absolute top-0 left-0 right-0 h-1 bg-warning" />
 
         <div className="flex absolute top-6 right-6 z-30 flex-col md:flex-row gap-2">
@@ -344,8 +344,8 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
           </a>
         </div>
 
-        <div className="relative z-20 max-w-7xl mx-auto px-4 py-10 md:py-20">
-          <div className="max-w-2xl md:max-w-sm lg:max-w-md">
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 py-10 md:py-20">
+          <div className="max-w-xs md:max-w-sm lg:max-w-md">
             <div className="animate-fade-in-up flex items-center gap-3 mb-6">
               <div className="w-12 h-px bg-warning" />
               <span className="font-mono text-xs tracking-[0.3em] text-warning uppercase">ПРОМЫШЛЕННОЕ ОБОРУДОВАНИЕ</span>
