@@ -67,9 +67,9 @@ export default function PayButton({ amount, description, showQty = false }: { am
       <button
         onClick={() => { setQty(1); setShowModal(true); }}
         disabled={loading}
-        className="bg-green-800 text-white px-4 py-2 text-xs font-oswald font-bold tracking-wider uppercase hover:bg-green-700 transition-colors disabled:opacity-60"
+        className="w-full border border-green-700/60 text-green-400 px-4 py-2.5 text-xs font-oswald font-bold tracking-wider uppercase hover:bg-green-900/30 hover:border-green-600 transition-colors disabled:opacity-60 min-h-[40px]"
       >
-        {loading ? "..." : "Оплатить"}
+        {loading ? "..." : "Оплатить онлайн"}
       </button>
 
       {showModal && (

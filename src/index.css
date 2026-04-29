@@ -49,7 +49,7 @@
   body {
     @apply bg-background text-foreground;
     font-family: "IBM Plex Sans", sans-serif;
-    background-color: #111;
+    background-color: #0e0f12;
     color: #e0d8cc;
   }
 
@@ -172,14 +172,14 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #111;
+  background: #0e0f12;
 }
 ::-webkit-scrollbar-thumb {
-  background: #fbb034;
+  background: #3a4047;
   border-radius: 0;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #f59a0c;
+  background: #4a5058;
 }
 
 ::selection {

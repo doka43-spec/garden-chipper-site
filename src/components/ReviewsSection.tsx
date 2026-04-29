@@ -36,7 +36,7 @@ function ReviewCard({ r }: { r: typeof REVIEWS[0] }) {
   };
 
   return (
-    <div className="bg-coal border border-border hover:border-warning/30 transition-colors flex flex-col">
+    <div className="bg-iron border border-border hover:border-chrome/40 transition-colors flex flex-col">
       {images.length > 0 && (
         <div className="relative h-56 overflow-hidden bg-steel/20" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
           <div className="absolute inset-0 flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${imgIdx * 100}%)` }}>
@@ -54,7 +54,7 @@ function ReviewCard({ r }: { r: typeof REVIEWS[0] }) {
               </button>
               <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex gap-1">
                 {images.map((_, i) => (
-                  <button key={i} aria-label={`Перейти к фото ${i + 1}`} onClick={() => setImgIdx(i)} className={`w-1.5 h-1.5 rounded-full ${i === imgIdx ? "bg-warning" : "bg-white/50"}`} />
+                  <button key={i} aria-label={`Перейти к фото ${i + 1}`} onClick={() => setImgIdx(i)} className={`w-2 h-2 rounded-full ${i === imgIdx ? "bg-white" : "bg-white/40"}`} />
                 ))}
               </div>
             </>

@@ -23,8 +23,8 @@ export default function ProductCard({ p, scrollTo }: { p: typeof PRODUCTS[0]; sc
   };
 
   return (
-    <div className="group bg-iron border border-border hover:border-warning/50 transition-all duration-300 flex flex-col">
-      <div className="relative bg-steel/40 h-48 steel-texture flex items-center justify-center overflow-hidden" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+    <div className="group bg-iron border border-border hover:border-chrome/40 transition-all duration-300 flex flex-col">
+      <div className="relative bg-steel/30 h-52 steel-texture flex items-center justify-center overflow-hidden" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
         {images.length > 0 ? (
           <div className="absolute inset-0 flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${imgIdx * 100}%)` }}>
             {images.map((src, i) => (
@@ -36,15 +36,15 @@ export default function ProductCard({ p, scrollTo }: { p: typeof PRODUCTS[0]; sc
         )}
         {images.length > 1 && (
           <>
-            <button aria-label="Предыдущее фото" onClick={() => setImgIdx((imgIdx - 1 + images.length) % images.length)} className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white w-7 h-7 flex items-center justify-center transition-colors">
-              <Icon name="ChevronLeft" size={16} />
+            <button aria-label="Предыдущее фото" onClick={() => setImgIdx((imgIdx - 1 + images.length) % images.length)} className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white w-8 h-8 flex items-center justify-center transition-colors">
+              <Icon name="ChevronLeft" size={18} />
             </button>
-            <button aria-label="Следующее фото" onClick={() => setImgIdx((imgIdx + 1) % images.length)} className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white w-7 h-7 flex items-center justify-center transition-colors">
-              <Icon name="ChevronRight" size={16} />
+            <button aria-label="Следующее фото" onClick={() => setImgIdx((imgIdx + 1) % images.length)} className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white w-8 h-8 flex items-center justify-center transition-colors">
+              <Icon name="ChevronRight" size={18} />
             </button>
-            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 flex gap-1">
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 flex gap-1.5">
               {images.map((_, i) => (
-                <button key={i} aria-label={`Перейти к фото ${i + 1}`} onClick={() => setImgIdx(i)} className={`w-1.5 h-1.5 rounded-full transition-colors ${i === imgIdx ? "bg-warning" : "bg-white/50"}`} />
+                <button key={i} aria-label={`Перейти к фото ${i + 1}`} onClick={() => setImgIdx(i)} className={`w-2 h-2 rounded-full transition-colors ${i === imgIdx ? "bg-white" : "bg-white/40"}`} />
               ))}
             </div>
           </>
@@ -78,25 +78,25 @@ export default function ProductCard({ p, scrollTo }: { p: typeof PRODUCTS[0]; sc
             {p.videoUrl2.includes("youtube") ? "Смотреть видео на YouTube" : "Смотреть видео на Rutube"}
           </a>
         )}
-        <div className="flex flex-col gap-2">
-          <div className="font-oswald text-base font-bold text-foreground">{p.price}</div>
-          <div className="flex gap-2 flex-wrap">
+        <div className="flex flex-col gap-3">
+          <div className="flex items-baseline justify-between gap-2">
+            <div className="font-oswald text-xl font-bold text-foreground">{p.price}</div>
             <Link
               to={`/product/${p.slug}`}
-              className="border border-warning/50 text-warning px-3 py-2 text-xs font-oswald font-bold tracking-wider uppercase hover:bg-warning/10 transition-colors"
+              className="text-xs text-muted-foreground hover:text-warning font-mono tracking-wider transition-colors"
             >
-              Подробнее
+              Подробнее →
             </Link>
-            <button
-              onClick={() => scrollTo("contacts")}
-              className="bg-warning text-black px-4 py-2 text-xs font-oswald font-bold tracking-wider uppercase hover:bg-amber-400 transition-colors"
-            >
-              Заказать
-            </button>
-            {p.slug === "rubitel-s" && (
-              <PayButton amount={45000} description={`${p.name} — садовый измельчитель веток`} />
-            )}
           </div>
+          <button
+            onClick={() => scrollTo("contacts")}
+            className="w-full bg-warning text-black px-4 py-3 text-sm font-oswald font-bold tracking-wider uppercase hover:bg-amber-400 transition-colors min-h-[44px]"
+          >
+            Заказать
+          </button>
+          {p.slug === "rubitel-s" && (
+            <PayButton amount={45000} description={`${p.name} — садовый измельчитель веток`} />
+          )}
         </div>
       </div>
     </div>

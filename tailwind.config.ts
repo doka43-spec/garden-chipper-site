@@ -63,12 +63,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				steel: '#2e3338',
+				steel: '#3a4047',
 				rust: '#c44a1a',
 				warning: '#fbb034',
 				chrome: '#b8c0c8',
-				iron: '#1a1a1a',
-				coal: '#111111',
+				iron: '#1e2126',
+				coal: '#0e0f12',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
