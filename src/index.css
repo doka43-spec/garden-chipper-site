@@ -65,7 +65,14 @@
 
   section[id],
   [id] {
-    scroll-margin-top: 110px;
+    scroll-margin-top: 70px;
+  }
+
+  @media (min-width: 768px) {
+    section[id],
+    [id] {
+      scroll-margin-top: 110px;
+    }
   }
 }
 

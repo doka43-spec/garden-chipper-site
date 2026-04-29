@@ -27,13 +27,21 @@ export default function Index() {
 
   const scrollTo = (id: string) => {
     setActiveNav(id);
+    const wasMenuOpen = mobileOpen;
     setMobileOpen(false);
-    if (id === "home") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
+    const doScroll = () => {
+      if (id === "home") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+    if (wasMenuOpen) {
+      setTimeout(doScroll, 60);
+    } else {
+      doScroll();
     }
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
