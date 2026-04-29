@@ -87,12 +87,13 @@ function ReviewCard({ r }: { r: typeof REVIEWS[0] }) {
   );
 }
 
-function ReviewModal({ onClose, onSubmit }: { onClose: () => void; onSubmit: (r: { author: string; rating: number; text: string }) => void }) {
+function ReviewModal({ onClose, onSubmit }: { onClose: () => void; onSubmit: (r: { author: string; rating: number; text: string }) => Promise<void> | void }) {
   const [name, setName] = useState("");
   const [rating, setRating] = useState(5);
   const [text, setText] = useState("");
   const [hovered, setHovered] = useState(0);
   const [done, setDone] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -102,10 +103,12 @@ function ReviewModal({ onClose, onSubmit }: { onClose: () => void; onSubmit: (r:
     return () => document.removeEventListener("keydown", onKey);
   }, [onClose]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !text.trim()) return;
-    onSubmit({ author: name.trim(), rating, text: text.trim() });
+    if (!name.trim() || !text.trim() || loading) return;
+    setLoading(true);
+    await Promise.resolve(onSubmit({ author: name.trim(), rating, text: text.trim() }));
+    setLoading(false);
     setDone(true);
   };
 
@@ -166,9 +169,10 @@ function ReviewModal({ onClose, onSubmit }: { onClose: () => void; onSubmit: (r:
               </div>
               <button
                 type="submit"
-                className="bg-warning text-black px-6 py-3 font-oswald font-bold tracking-wider uppercase text-sm hover:bg-amber-400 transition-colors"
+                disabled={loading}
+                className="bg-warning text-black px-6 py-3 font-oswald font-bold tracking-wider uppercase text-sm hover:bg-amber-400 transition-colors disabled:opacity-60"
               >
-                Опубликовать отзыв
+                {loading ? "Отправка..." : "Опубликовать отзыв"}
               </button>
             </form>
           </>

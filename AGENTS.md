@@ -134,10 +134,10 @@ CDN-ссылка: `https://cdn.jsdelivr.net/gh/doka43-spec/rubitel-images/имя
 - [x] Удалён неиспользуемый пакет `next-themes` + неиспользуемый `Sonner`
 - [x] Lazy-load для `ProductPage` и `NotFound` через `React.lazy`
 
-## Приоритет 5 — UX
-- [ ] Уменьшить высоту Hero на мобильных (60vh → 50vh)
-- [ ] `scroll-margin-top: 120px` для якорных секций (чтобы header не перекрывал)
-- [ ] Loading-индикаторы в формах (ContactForm, ReviewModal)
+## Приоритет 5 — UX ✅ ВЫПОЛНЕНО 30.04.2026
+- [x] Уменьшена высота Hero на мобильных (60vh → 50vh)
+- [x] Добавлен `scroll-margin-top: 110px` для всех секций с id (sticky header больше не перекрывает)
+- [x] Loading-индикатор в `ReviewModal` («Отправка...»). В `ContactForm` уже был.
 
 ---
 
@@ -206,3 +206,27 @@ CDN-ссылка: `https://cdn.jsdelivr.net/gh/doka43-spec/rubitel-images/имя
 - `src/App.tsx`
 - `src/components/ui/sonner.tsx` (удалён)
 - `package.json` (удалён `next-themes`)
+
+## 30.04.2026 — Приоритет 5: UX ✅
+
+**Выполнено:**
+- В `HomeHero.tsx` мобильный hero уменьшен с `h-[60vh]` до `h-[50vh]` — пользователь быстрее видит товары
+- В `index.css` добавлено правило `section[id], [id] { scroll-margin-top: 110px; }` — при переходе по якорю заголовок секции больше не прячется под sticky header
+- В `ReviewModal` (ReviewsSection.tsx) добавлено состояние `loading` и текст «Отправка...» на кнопке + `disabled` — пользователь видит, что отзыв отправляется, и не может нажать дважды
+- `ContactForm` уже имел loading-индикатор («Отправка...») — проверено
+
+**Изменённые файлы:**
+- `src/components/hero/HomeHero.tsx`
+- `src/index.css`
+- `src/components/ReviewsSection.tsx`
+
+---
+
+# 🎉 ВСЕ 5 ПРИОРИТЕТОВ ВЫПОЛНЕНЫ
+
+Аудит проекта от 30.04.2026 полностью отработан:
+1. ✅ Доступность (a11y)
+2. ✅ Контрастность (WCAG AA)
+3. ✅ SEO (LocalBusiness + AggregateRating)
+4. ✅ Производительность (lazy-load, минус зависимость)
+5. ✅ UX (Hero, scroll-margin, loading)

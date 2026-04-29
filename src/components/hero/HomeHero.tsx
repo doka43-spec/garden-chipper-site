@@ -30,9 +30,9 @@ export default function HomeHero() {
           </a>
         </div>
 
-        {/* Фото на 60% высоты экрана */}
+        {/* Фото на 50% высоты экрана */}
         <div
-          className="w-full h-[60vh] bg-no-repeat bg-cover bg-center"
+          className="w-full h-[50vh] bg-no-repeat bg-cover bg-center"
           style={{ backgroundImage: `url(${HERO_BG})` }}
         />
 
