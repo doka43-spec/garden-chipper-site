@@ -264,6 +264,18 @@ CDN-ссылка: `https://cdn.jsdelivr.net/gh/doka43-spec/rubitel-images/имя
 4. ✅ Производительность (lazy-load, минус зависимость)
 5. ✅ UX (Hero, scroll-margin, loading)
 
+## 30.04.2026 — Кликабельные телефон и email ✅
+
+**Выполнено:**
+- В `Index.tsx` (TopBar главной): телефон обёрнут в `<a href="tel:+79123333225">`, email — в `<a href="mailto:vyatkalux@yandex.ru">`
+- В `ProductPage.tsx` (TopBar страниц товаров): аналогичные изменения
+- При наведении — подсветка цвета warning (жёлтый)
+- На мобильных клик по телефону сразу запускает звонок, по email — открывает почтовое приложение
+
+**Изменённые файлы:**
+- `src/pages/Index.tsx`
+- `src/pages/ProductPage.tsx`
+
 ## 30.04.2026 — Добавлены иконки WhatsApp и Avito ✅
 
 **Выполнено:**

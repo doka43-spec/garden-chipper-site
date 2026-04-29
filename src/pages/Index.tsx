@@ -50,10 +50,10 @@ export default function Index() {
       <div className="border-b border-border bg-iron steel-texture">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-9">
           <div className="flex items-center gap-6 text-xs text-muted-foreground font-mono">
-            <span className="flex items-center gap-1.5">
+            <a href="tel:+79123333225" aria-label="Позвонить +7 (912) 333-32-25" className="flex items-center gap-1.5 hover:text-warning transition-colors">
               <Icon name="Phone" size={11} />
               +7 (912) 333-32-25
-            </span>
+            </a>
             <span className="hidden md:flex items-center gap-1.5">
               <Icon name="Clock" size={11} />
               Пн–Пт 8:00–18:00
@@ -61,7 +61,7 @@ export default function Index() {
           </div>
           <div className="flex items-center gap-4 text-xs text-muted-foreground font-mono">
             <span className="text-warning animate-pulse-border">● ОНЛАЙН</span>
-            <span className="hidden md:block">vyatkalux@yandex.ru</span>
+            <a href="mailto:vyatkalux@yandex.ru" aria-label="Написать на почту" className="hidden md:block hover:text-warning transition-colors">vyatkalux@yandex.ru</a>
           </div>
         </div>
       </div>
