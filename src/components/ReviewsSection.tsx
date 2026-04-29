@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import React from "react";
 import Icon from "@/components/ui/icon";
 import {
@@ -46,15 +46,15 @@ function ReviewCard({ r }: { r: typeof REVIEWS[0] }) {
           </div>
           {images.length > 1 && (
             <>
-              <button onClick={() => setImgIdx((imgIdx - 1 + images.length) % images.length)} className="absolute left-1 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white w-6 h-6 flex items-center justify-center">
+              <button aria-label="Предыдущее фото" onClick={() => setImgIdx((imgIdx - 1 + images.length) % images.length)} className="absolute left-1 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white w-6 h-6 flex items-center justify-center">
                 <Icon name="ChevronLeft" size={14} />
               </button>
-              <button onClick={() => setImgIdx((imgIdx + 1) % images.length)} className="absolute right-1 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white w-6 h-6 flex items-center justify-center">
+              <button aria-label="Следующее фото" onClick={() => setImgIdx((imgIdx + 1) % images.length)} className="absolute right-1 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white w-6 h-6 flex items-center justify-center">
                 <Icon name="ChevronRight" size={14} />
               </button>
               <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex gap-1">
                 {images.map((_, i) => (
-                  <button key={i} onClick={() => setImgIdx(i)} className={`w-1.5 h-1.5 rounded-full ${i === imgIdx ? "bg-warning" : "bg-white/50"}`} />
+                  <button key={i} aria-label={`Перейти к фото ${i + 1}`} onClick={() => setImgIdx(i)} className={`w-1.5 h-1.5 rounded-full ${i === imgIdx ? "bg-warning" : "bg-white/50"}`} />
                 ))}
               </div>
             </>
@@ -94,6 +94,14 @@ function ReviewModal({ onClose, onSubmit }: { onClose: () => void; onSubmit: (r:
   const [hovered, setHovered] = useState(0);
   const [done, setDone] = useState(false);
 
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !text.trim()) return;
@@ -103,8 +111,8 @@ function ReviewModal({ onClose, onSubmit }: { onClose: () => void; onSubmit: (r:
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4" onClick={onClose}>
-      <div className="bg-coal border border-border w-full max-w-md p-8 relative" onClick={(e) => e.stopPropagation()}>
-        <button onClick={onClose} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors">
+      <div role="dialog" aria-modal="true" aria-labelledby="review-modal-title" className="bg-coal border border-border w-full max-w-md p-8 relative" onClick={(e) => e.stopPropagation()}>
+        <button aria-label="Закрыть" onClick={onClose} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors">
           <Icon name="X" size={20} />
         </button>
         {done ? (
@@ -115,7 +123,7 @@ function ReviewModal({ onClose, onSubmit }: { onClose: () => void; onSubmit: (r:
           </div>
         ) : (
           <>
-            <div className="font-oswald text-2xl font-bold text-foreground mb-6">Оставить отзыв</div>
+            <div id="review-modal-title" className="font-oswald text-2xl font-bold text-foreground mb-6">Оставить отзыв</div>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               <div>
                 <label className="text-xs font-mono text-muted-foreground tracking-wider uppercase mb-1.5 block">Ваше имя</label>

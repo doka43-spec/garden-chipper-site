@@ -16,6 +16,15 @@ export default function Index() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [mobileOpen]);
+
   const scrollTo = (id: string) => {
     setActiveNav(id);
     setMobileOpen(false);
@@ -90,7 +99,7 @@ export default function Index() {
               <Icon name="Phone" size={13} />
               Заказать звонок
             </button>
-            <button className="lg:hidden p-2 text-muted-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
+            <button aria-label={mobileOpen ? "Закрыть меню" : "Открыть меню"} aria-expanded={mobileOpen} className="lg:hidden p-2 text-muted-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
               <Icon name={mobileOpen ? "X" : "Menu"} size={22} />
             </button>
           </div>
@@ -117,6 +126,7 @@ export default function Index() {
 
       {showScrollTop && (
         <button
+          aria-label="Наверх"
           onClick={() => scrollTo("home")}
           className="fixed bottom-6 right-4 z-50 md:hidden bg-warning/80 hover:bg-warning text-black w-11 h-11 flex items-center justify-center shadow-lg transition-all"
         >

@@ -80,3 +80,81 @@ CDN-ссылка: `https://cdn.jsdelivr.net/gh/doka43-spec/rubitel-images/имя
 
 ## После каждого билда загружать на Бегет
 Скачать билд → распаковать → загрузить содержимое `dist/` в `public_html/`
+
+---
+
+# 📜 ИСТОРИЯ ПРОЕКТА
+
+## Этап 1 — Базовая разработка
+- Создан SPA на Vite + React + TypeScript + Tailwind
+- Стек: shadcn/ui, lucide-react, react-router-dom
+- Тёмный индустриальный дизайн (угольный фон + жёлтые акценты)
+- Основные секции: Hero, каталог рубителей, запчасти, отзывы, контакты
+
+## Этап 2 — Переход на автономность
+- Отказ от backend-функций платформы Poehali
+- Картинки перенесены на GitHub (репозиторий `doka43-spec/rubitel-images`) + jsDelivr CDN
+- Отправка писем — через `mail.php` на Бегете (заявки и отзывы → vyatkalux@yandex.ru)
+- Хостинг переведён на Бегет (`public_html`), домен `rubitel.ru` привязан напрямую
+
+## Этап 3 — SEO и индексация
+- Загружен favicon.ico на Бегет
+- Сайт добавлен в Яндекс.Вебмастер
+- Главная страница отправлена на переобход
+- Sitemap.xml загружен (5 страниц), статус OK
+- Главное зеркало: `https://rubitel.ru` (HTTPS, без www)
+- Schema.org: Organization, Product
+- Мета-теги: title, description, OG, Twitter, canonical
+
+## Этап 4 — Аудит проекта (текущий)
+Проведён комплексный анализ. Выявлены приоритетные направления улучшений:
+доступность (a11y), контрастность, локальный SEO, производительность, мобильный UX.
+
+---
+
+# 🗺️ ПЛАН РАБОТ
+
+## Приоритет 1 — Доступность (a11y) ✅ ВЫПОЛНЕНО 30.04.2026
+- [x] Добавить `role="dialog"` и `aria-modal="true"` в модалки (PayButton, ReviewModal)
+- [x] Закрытие модалок по Escape
+- [x] `aria-label` на кнопки-стрелки и точки галерей (ProductCard, PartCard, ReviewCard)
+- [x] Закрытие мобильного меню по Escape
+
+## Приоритет 2 — Контрастность и читаемость
+- [ ] Поднять `--muted-foreground` в `index.css` для соответствия WCAG AA (≥4.5:1)
+- [ ] Проверить теги «НОВИНКА» и подобные на мобильных
+
+## Приоритет 3 — SEO
+- [ ] Добавить Schema.org `LocalBusiness` (адрес, телефон, часы работы) в `index.html`
+- [ ] Добавить JSON-LD `AggregateRating` для отзывов (звёздочки в выдаче Яндекса)
+
+## Приоритет 4 — Производительность
+- [ ] Добавить `&display=swap` к Google Fonts в `index.html`
+- [ ] Удалить неиспользуемый пакет `next-themes`
+- [ ] Lazy-load для `ProductPage` и `NotFound` через `React.lazy`
+
+## Приоритет 5 — UX
+- [ ] Уменьшить высоту Hero на мобильных (60vh → 50vh)
+- [ ] `scroll-margin-top: 120px` для якорных секций (чтобы header не перекрывал)
+- [ ] Loading-индикаторы в формах (ContactForm, ReviewModal)
+
+---
+
+# 📝 ЖУРНАЛ ИЗМЕНЕНИЙ
+
+## 30.04.2026 — Приоритет 1: Доступность (a11y) ✅
+
+**Выполнено:**
+- `PayButton`: модалка получила `role="dialog"`, `aria-modal="true"`, `aria-labelledby`, закрытие по Escape; кнопки +/− с `aria-label`
+- `ReviewModal` (ReviewsSection): `role="dialog"`, `aria-modal`, `aria-labelledby`, Escape; крестик закрытия с `aria-label="Закрыть"`
+- `ProductCard`: стрелки и точки галереи с `aria-label` (Предыдущее/Следующее фото, Перейти к фото N)
+- `PartCard`: стрелки и точки галереи с `aria-label`
+- Галерея в `ReviewCard`: стрелки и точки с `aria-label`
+- `Index.tsx`: мобильное меню закрывается по Escape; бургер-кнопка с `aria-label` и `aria-expanded`; кнопка «Наверх» с `aria-label`
+
+**Изменённые файлы:**
+- `src/components/hero/PayButton.tsx`
+- `src/components/hero/ProductCard.tsx`
+- `src/components/hero/PartCard.tsx`
+- `src/components/ReviewsSection.tsx`
+- `src/pages/Index.tsx`

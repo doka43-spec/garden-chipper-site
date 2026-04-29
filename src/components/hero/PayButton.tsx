@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const YOKASSA_URL = "/pay.php";
 
@@ -40,6 +40,15 @@ export default function PayButton({ amount, description, showQty = false }: { am
 
   const totalAmount = amount * qty;
 
+  useEffect(() => {
+    if (!showModal) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setShowModal(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [showModal]);
+
   const handlePay = async () => {
     const hasEmail = email && email.includes("@");
     const hasPhone = phone && phone.replace(/\D/g, "").length >= 10;
@@ -65,16 +74,16 @@ export default function PayButton({ amount, description, showQty = false }: { am
 
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60" onClick={() => setShowModal(false)}>
-          <div className="bg-white text-black p-6 w-80 shadow-xl" onClick={(e) => e.stopPropagation()}>
-            <div className="font-oswald font-bold text-lg mb-1">Оплата</div>
+          <div role="dialog" aria-modal="true" aria-labelledby="pay-modal-title" className="bg-white text-black p-6 w-80 shadow-xl" onClick={(e) => e.stopPropagation()}>
+            <div id="pay-modal-title" className="font-oswald font-bold text-lg mb-1">Оплата</div>
 
             {showQty && (
               <div className="flex items-center justify-between mb-4 border border-gray-200 p-3">
                 <span className="text-sm text-gray-600">Количество комплектов</span>
                 <div className="flex items-center gap-3">
-                  <button onClick={() => setQty(q => Math.max(1, q - 1))} className="w-7 h-7 border border-gray-300 flex items-center justify-center text-lg font-bold hover:border-green-600 transition-colors">−</button>
-                  <span className="font-oswald font-bold text-base w-4 text-center">{qty}</span>
-                  <button onClick={() => setQty(q => q + 1)} className="w-7 h-7 border border-gray-300 flex items-center justify-center text-lg font-bold hover:border-green-600 transition-colors">+</button>
+                  <button aria-label="Уменьшить количество" onClick={() => setQty(q => Math.max(1, q - 1))} className="w-7 h-7 border border-gray-300 flex items-center justify-center text-lg font-bold hover:border-green-600 transition-colors">−</button>
+                  <span className="font-oswald font-bold text-base w-4 text-center" aria-live="polite">{qty}</span>
+                  <button aria-label="Увеличить количество" onClick={() => setQty(q => q + 1)} className="w-7 h-7 border border-gray-300 flex items-center justify-center text-lg font-bold hover:border-green-600 transition-colors">+</button>
                 </div>
               </div>
             )}
