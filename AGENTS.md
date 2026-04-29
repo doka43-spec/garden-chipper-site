@@ -264,6 +264,17 @@ CDN-ссылка: `https://cdn.jsdelivr.net/gh/doka43-spec/rubitel-images/имя
 4. ✅ Производительность (lazy-load, минус зависимость)
 5. ✅ UX (Hero, scroll-margin, loading)
 
+## 30.04.2026 — Добавлены иконки WhatsApp и Avito ✅
+
+**Выполнено:**
+- В `HomeHero.tsx` (мобильная и десктопная версии) рядом с YouTube/Rutube добавлены:
+  - **WhatsApp** — `https://wa.me/79123333225` (прямой переход в чат с +7 912 333-32-25), иконка `MessageCircle`, зелёный фон
+  - **Avito** — `https://www.avito.ru/brands/i11837785`, буква «A» на голубом фоне
+- Все 4 иконки: `target="_blank"`, `rel="noopener noreferrer"`, `aria-label` для доступности
+
+**Изменённые файлы:**
+- `src/components/hero/HomeHero.tsx`
+
 ## 30.04.2026 — Хотфикс: некорректный скролл к секциям на мобильных ✅
 
 **Проблема:** при клике по пункту мобильного меню («Каталог», «Запчасти» и т.д.) скролл уходил не в начало секции, а чуть ниже/выше.

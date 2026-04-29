@@ -15,6 +15,7 @@ export default function HomeHero() {
             target="_blank"
             rel="noopener noreferrer"
             title="YouTube"
+            aria-label="YouTube канал"
             className="flex items-center justify-center bg-red-900/60 text-white/80 w-9 h-9 rounded transition-colors shadow-lg"
           >
             <Icon name="Youtube" size={18} />
@@ -24,9 +25,30 @@ export default function HomeHero() {
             target="_blank"
             rel="noopener noreferrer"
             title="Rutube"
+            aria-label="Rutube канал"
             className="flex items-center justify-center bg-green-900/60 text-white/80 w-9 h-9 rounded transition-colors shadow-lg"
           >
             <Icon name="Play" size={18} />
+          </a>
+          <a
+            href="https://wa.me/79123333225"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="WhatsApp"
+            aria-label="Написать в WhatsApp"
+            className="flex items-center justify-center bg-green-700/70 text-white/90 w-9 h-9 rounded transition-colors shadow-lg"
+          >
+            <Icon name="MessageCircle" size={18} />
+          </a>
+          <a
+            href="https://www.avito.ru/brands/i11837785"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Avito"
+            aria-label="Объявления на Avito"
+            className="flex items-center justify-center bg-sky-700/70 text-white/90 w-9 h-9 rounded transition-colors shadow-lg font-bold text-xs"
+          >
+            A
           </a>
         </div>
 
@@ -91,6 +113,7 @@ export default function HomeHero() {
             target="_blank"
             rel="noopener noreferrer"
             title="YouTube"
+            aria-label="YouTube канал"
             className="flex items-center justify-center bg-red-900/50 hover:bg-red-700/70 text-white/70 hover:text-white w-10 h-10 rounded transition-colors shadow-lg"
           >
             <Icon name="Youtube" size={18} />
@@ -100,9 +123,30 @@ export default function HomeHero() {
             target="_blank"
             rel="noopener noreferrer"
             title="Rutube"
+            aria-label="Rutube канал"
             className="flex items-center justify-center bg-green-900/50 hover:bg-green-700/70 text-white/70 hover:text-white w-10 h-10 rounded transition-colors shadow-lg"
           >
             <Icon name="Play" size={18} />
+          </a>
+          <a
+            href="https://wa.me/79123333225"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="WhatsApp"
+            aria-label="Написать в WhatsApp"
+            className="flex items-center justify-center bg-green-700/60 hover:bg-green-600/80 text-white/80 hover:text-white w-10 h-10 rounded transition-colors shadow-lg"
+          >
+            <Icon name="MessageCircle" size={18} />
+          </a>
+          <a
+            href="https://www.avito.ru/brands/i11837785"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Avito"
+            aria-label="Объявления на Avito"
+            className="flex items-center justify-center bg-sky-700/60 hover:bg-sky-600/80 text-white/80 hover:text-white w-10 h-10 rounded transition-colors shadow-lg font-bold text-sm"
+          >
+            A
           </a>
         </div>
 
