@@ -164,7 +164,7 @@ export default function ProductPage() {
 
           <Link
             to="/#contacts"
-            className="hidden md:flex items-center gap-2 bg-warning/55 text-black px-4 py-2 text-xs font-oswald font-bold tracking-wider uppercase hover:bg-warning/80 transition-colors"
+            className="hidden md:flex items-center gap-2 bg-warning text-black px-5 py-2.5 text-xs font-oswald font-bold tracking-wider uppercase hover:bg-amber-400 transition-colors"
           >
             <Icon name="Phone" size={13} />
             Заказать звонок
@@ -209,7 +209,7 @@ export default function ProductPage() {
                   </button>
                   <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex gap-1.5">
                     {images.map((_, i) => (
-                      <button key={i} onClick={() => setImgIdx(i)} className={`w-2 h-2 rounded-full transition-colors ${i === imgIdx ? "bg-warning" : "bg-white/40"}`} />
+                      <button key={i} aria-label={`Перейти к фото ${i + 1}`} onClick={() => setImgIdx(i)} className={`w-2 h-2 rounded-full transition-colors ${i === imgIdx ? "bg-white" : "bg-white/40"}`} />
                     ))}
                   </div>
                 </>
@@ -233,7 +233,12 @@ export default function ProductPage() {
               <span className="font-mono text-xs tracking-[0.2em] text-warning uppercase">Промышленный измельчитель</span>
             </div>
             <h1 className="font-oswald text-4xl lg:text-5xl font-bold text-foreground tracking-wide mb-3">{product.name}</h1>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8 font-plex">{product.desc}</p>
+            <p className="text-muted-foreground text-lg leading-relaxed mb-4 font-plex">{product.desc}</p>
+
+            <div className="inline-flex items-center gap-2 self-start mb-8 border border-green-700/40 bg-green-900/15 px-3 py-1.5">
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <span className="text-xs font-mono tracking-wider uppercase text-green-400">В наличии — отгрузка 1-3 дня</span>
+            </div>
 
             {/* SPECS */}
             <div className="border border-border bg-iron/60 p-6 mb-8">
@@ -286,19 +291,31 @@ export default function ProductPage() {
                   <div className="text-warning">Гарантия 1 год</div>
                 </div>
               </div>
-              <div className="flex gap-3">
+              <div className="flex flex-col gap-2">
                 <Link
                   to="/#contacts"
-                  className="flex-1 bg-warning text-black py-3 text-sm font-oswald font-bold tracking-wider uppercase hover:bg-amber-400 transition-colors text-center"
+                  className="bg-warning text-black py-3.5 text-sm font-oswald font-bold tracking-wider uppercase hover:bg-amber-400 transition-colors text-center min-h-[48px] flex items-center justify-center"
                 >
                   Заказать
                 </Link>
-                <a
-                  href="tel:+79123333225"
-                  className="flex items-center gap-2 border border-warning/40 text-warning px-5 py-3 text-sm font-oswald font-bold tracking-wider uppercase hover:bg-warning/10 transition-colors"
-                >
-                  <Icon name="Phone" size={16} />
-                </a>
+                <div className="flex gap-2">
+                  <a
+                    href={`https://wa.me/79123333225?text=${encodeURIComponent(`Здравствуйте! Интересует ${product.name} (${product.price}). Подскажите по наличию и доставке.`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 border border-green-700/60 text-green-400 py-3 text-sm font-oswald font-bold tracking-wider uppercase hover:bg-green-900/30 hover:border-green-600 transition-colors min-h-[44px]"
+                  >
+                    <Icon name="MessageCircle" size={16} />
+                    WhatsApp
+                  </a>
+                  <a
+                    href="tel:+79123333225"
+                    aria-label="Позвонить"
+                    className="flex items-center justify-center gap-2 border border-warning/40 text-warning px-5 py-3 text-sm font-oswald font-bold tracking-wider uppercase hover:bg-warning/10 transition-colors min-h-[44px]"
+                  >
+                    <Icon name="Phone" size={16} />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -360,6 +377,17 @@ export default function ProductPage() {
           <Link to="/" className="text-xs text-muted-foreground hover:text-warning font-mono transition-colors">← Вернуться на главную</Link>
         </div>
       </footer>
+
+      {/* Floating WhatsApp button on mobile */}
+      <a
+        href={`https://wa.me/79123333225?text=${encodeURIComponent(`Здравствуйте! Интересует ${product.name}. Подскажите по наличию и доставке.`)}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Написать в WhatsApp"
+        className="fixed bottom-6 left-4 z-50 md:hidden bg-green-600 hover:bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+      >
+        <Icon name="MessageCircle" size={26} />
+      </a>
     </div>
   );
 }

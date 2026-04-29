@@ -13,8 +13,8 @@ export const NAV_ITEMS = [
   { id: "parts", label: "Запчасти" },
   { id: "about", label: "О нас" },
   { id: "delivery", label: "Доставка" },
+  { id: "faq", label: "Вопросы" },
   { id: "contacts", label: "Контакты" },
-  { id: "articles", label: "Статьи" },
 ];
 
 export const PRODUCTS = [

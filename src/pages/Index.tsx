@@ -3,6 +3,7 @@ import Icon from "@/components/ui/icon";
 import { NAV_ITEMS, LOGO_URL, LOGO_FILTER } from "@/components/shared";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
+import FaqSection from "@/components/FaqSection";
 import ReviewsSection from "@/components/ReviewsSection";
 
 export default function Index() {
@@ -130,13 +131,25 @@ export default function Index() {
 
       <HeroSection scrollTo={scrollTo} />
       <AboutSection scrollTo={scrollTo} />
+      <FaqSection />
       <ReviewsSection scrollTo={scrollTo} />
+
+      {/* Floating WhatsApp button — visible always on mobile */}
+      <a
+        href="https://wa.me/79123333225?text=Здравствуйте!%20Помогите,%20пожалуйста,%20с%20выбором%20измельчителя."
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Написать в WhatsApp"
+        className="fixed bottom-6 left-4 z-50 md:hidden bg-green-600 hover:bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all"
+      >
+        <Icon name="MessageCircle" size={26} />
+      </a>
 
       {showScrollTop && (
         <button
           aria-label="Наверх"
           onClick={() => scrollTo("home")}
-          className="fixed bottom-6 right-4 z-50 md:hidden bg-warning/80 hover:bg-warning text-black w-11 h-11 flex items-center justify-center shadow-lg transition-all"
+          className="fixed bottom-6 right-4 z-50 md:hidden bg-warning/90 hover:bg-warning text-black w-11 h-11 flex items-center justify-center shadow-lg transition-all"
         >
           <Icon name="ArrowUp" size={20} />
         </button>

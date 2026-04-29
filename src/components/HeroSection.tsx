@@ -4,6 +4,7 @@ import { PRODUCTS, PARTS, SectionLabel, SectionTitle } from "@/components/shared
 import HomeHero from "./hero/HomeHero";
 import ProductCard from "./hero/ProductCard";
 import PartCard from "./hero/PartCard";
+import CompareTable from "./CompareTable";
 
 interface HeroSectionProps {
   scrollTo: (id: string) => void;
@@ -51,6 +52,8 @@ export default function HeroSection({ scrollTo }: HeroSectionProps) {
             )}
 
           </div>
+
+          <CompareTable />
         </div>
       </section>
 
