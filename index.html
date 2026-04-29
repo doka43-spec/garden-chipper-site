@@ -33,13 +33,34 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "LocalBusiness",
+      "@id": "https://rubitel.ru/#business",
       "name": "RUBITEL",
       "url": "https://rubitel.ru",
       "logo": "https://cdn.jsdelivr.net/gh/doka43-spec/rubitel-images/logo.png",
+      "image": "https://cdn.jsdelivr.net/gh/doka43-spec/rubitel-images/og-image.jpg",
       "description": "Производство и продажа промышленных измельчителей, шредеров, запчастей и расходных материалов",
+      "telephone": "+7-912-333-32-25",
+      "email": "vyatkalux@yandex.ru",
+      "priceRange": "₽₽",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ул. Транспортная, 13б и 15",
+        "addressLocality": "посёлок Торфяной",
+        "addressRegion": "Кировская область",
+        "addressCountry": "RU"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ],
       "contactPoint": {
         "@type": "ContactPoint",
+        "telephone": "+7-912-333-32-25",
         "contactType": "sales",
         "availableLanguage": "Russian"
       },
@@ -62,6 +83,25 @@
           }
         }
       ]
+    }
+    </script>
+    <script type="application/ld+json" id="ld-aggregate-rating">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Промышленные измельчители RUBITEL",
+      "description": "Производство и продажа промышленных измельчителей и шредеров RUBITEL",
+      "brand": {
+        "@type": "Brand",
+        "name": "RUBITEL"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "1",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
     }
     </script>
 

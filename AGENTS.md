@@ -125,9 +125,9 @@ CDN-ссылка: `https://cdn.jsdelivr.net/gh/doka43-spec/rubitel-images/имя
 - [x] Подтянуть placeholder'ы и затемнённые элементы (`/40`, `/60`)
 - [ ] Проверить теги «НОВИНКА» и подобные на мобильных (отложено — низкий приоритет)
 
-## Приоритет 3 — SEO
-- [ ] Добавить Schema.org `LocalBusiness` (адрес, телефон, часы работы) в `index.html`
-- [ ] Добавить JSON-LD `AggregateRating` для отзывов (звёздочки в выдаче Яндекса)
+## Приоритет 3 — SEO ✅ ВЫПОЛНЕНО 30.04.2026
+- [x] Преобразовать Organization → `LocalBusiness` (адрес, телефон, часы работы)
+- [x] Добавить JSON-LD `AggregateRating` с динамическим обновлением из реальных отзывов
 
 ## Приоритет 4 — Производительность
 - [ ] Добавить `&display=swap` к Google Fonts в `index.html`
@@ -170,4 +170,21 @@ CDN-ссылка: `https://cdn.jsdelivr.net/gh/doka43-spec/rubitel-images/имя
 **Изменённые файлы:**
 - `src/index.css`
 - `src/components/shared.tsx`
+- `src/components/ReviewsSection.tsx`
+
+## 30.04.2026 — Приоритет 3: SEO (LocalBusiness + AggregateRating) ✅
+
+**Выполнено:**
+- В `index.html` Organization заменена на `LocalBusiness` со всеми деталями:
+  - Адрес: ул. Транспортная, 13б и 15, посёлок Торфяной, Кировская область
+  - Телефон: +7-912-333-32-25
+  - Email: vyatkalux@yandex.ru
+  - Часы работы: Пн-Пт 08:00-18:00
+  - Ценовой диапазон, изображение, логотип
+- Добавлен второй JSON-LD блок с `AggregateRating` (Product с рейтингом)
+- В `ReviewsSection.tsx` добавлен `useEffect`, который **динамически обновляет** AggregateRating при добавлении новых отзывов: подставляет реальное среднее `ratingValue` и `reviewCount`
+- Эффект для SEO: Яндекс/Google смогут показывать звёздочки и количество отзывов в выдаче, а также карточку организации с адресом и часами работы
+
+**Изменённые файлы:**
+- `index.html`
 - `src/components/ReviewsSection.tsx`

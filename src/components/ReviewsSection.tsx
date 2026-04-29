@@ -188,6 +188,27 @@ export default function ReviewsSection({ scrollTo }: ReviewsSectionProps) {
   const starCounts = [5, 4, 3, 2, 1].map((star) => allReviews.filter((r) => r.rating === star).length);
   const starTotal = starCounts.reduce((a, b) => a + b, 0);
 
+  useEffect(() => {
+    if (total === 0) return;
+    const ldScript = document.getElementById("ld-aggregate-rating");
+    if (!ldScript) return;
+    const data = {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Промышленные измельчители RUBITEL",
+      "description": "Производство и продажа промышленных измельчителей и шредеров RUBITEL",
+      "brand": { "@type": "Brand", "name": "RUBITEL" },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": avgRating,
+        "reviewCount": String(total),
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    };
+    ldScript.textContent = JSON.stringify(data);
+  }, [total, avgRating]);
+
   const handleNewReview = async (r: { author: string; rating: number; text: string }) => {
     await fetch("/mail.php", {
       method: "POST",
