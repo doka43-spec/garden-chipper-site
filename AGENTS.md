@@ -120,9 +120,10 @@ CDN-ссылка: `https://cdn.jsdelivr.net/gh/doka43-spec/rubitel-images/имя
 - [x] `aria-label` на кнопки-стрелки и точки галерей (ProductCard, PartCard, ReviewCard)
 - [x] Закрытие мобильного меню по Escape
 
-## Приоритет 2 — Контрастность и читаемость
-- [ ] Поднять `--muted-foreground` в `index.css` для соответствия WCAG AA (≥4.5:1)
-- [ ] Проверить теги «НОВИНКА» и подобные на мобильных
+## Приоритет 2 — Контрастность и читаемость ✅ ВЫПОЛНЕНО 30.04.2026
+- [x] Поднять `--muted-foreground` в `index.css` для соответствия WCAG AA (≥4.5:1)
+- [x] Подтянуть placeholder'ы и затемнённые элементы (`/40`, `/60`)
+- [ ] Проверить теги «НОВИНКА» и подобные на мобильных (отложено — низкий приоритет)
 
 ## Приоритет 3 — SEO
 - [ ] Добавить Schema.org `LocalBusiness` (адрес, телефон, часы работы) в `index.html`
@@ -158,3 +159,15 @@ CDN-ссылка: `https://cdn.jsdelivr.net/gh/doka43-spec/rubitel-images/имя
 - `src/components/hero/PartCard.tsx`
 - `src/components/ReviewsSection.tsx`
 - `src/pages/Index.tsx`
+
+## 30.04.2026 — Приоритет 2: Контрастность ✅
+
+**Выполнено:**
+- В `src/index.css` поднят `--muted-foreground` с `40 8% 55%` до `40 8% 70%` — контраст вырос с ~3.6:1 до ~6:1 (WCAG AA для обычного текста — пройден)
+- Дата отзыва (`text-muted-foreground/60` → `/80`) — теперь читаема
+- Все placeholder'ы в формах (`ContactForm`, `ReviewModal`) подняты с `/40` до `/60`
+
+**Изменённые файлы:**
+- `src/index.css`
+- `src/components/shared.tsx`
+- `src/components/ReviewsSection.tsx`

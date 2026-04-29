@@ -269,7 +269,7 @@ export function ContactForm() {
           onChange={(e) => setName(e.target.value)}
           placeholder="Иван Иванов"
           required
-          className="w-full bg-iron border border-border px-4 py-3 text-sm text-foreground font-plex focus:outline-none focus:border-warning/50 transition-colors placeholder:text-muted-foreground/40"
+          className="w-full bg-iron border border-border px-4 py-3 text-sm text-foreground font-plex focus:outline-none focus:border-warning/50 transition-colors placeholder:text-muted-foreground/60"
         />
       </div>
       <div>
@@ -279,7 +279,7 @@ export function ContactForm() {
           onChange={(e) => setPhone(e.target.value)}
           placeholder="+7 (___) ___-__-__"
           required
-          className="w-full bg-iron border border-border px-4 py-3 text-sm text-foreground font-plex focus:outline-none focus:border-warning/50 transition-colors placeholder:text-muted-foreground/40"
+          className="w-full bg-iron border border-border px-4 py-3 text-sm text-foreground font-plex focus:outline-none focus:border-warning/50 transition-colors placeholder:text-muted-foreground/60"
         />
       </div>
       <div>
@@ -289,7 +289,7 @@ export function ContactForm() {
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Интересующая модель, вопросы..."
           rows={3}
-          className="w-full bg-iron border border-border px-4 py-3 text-sm text-foreground font-plex focus:outline-none focus:border-warning/50 transition-colors resize-none placeholder:text-muted-foreground/40"
+          className="w-full bg-iron border border-border px-4 py-3 text-sm text-foreground font-plex focus:outline-none focus:border-warning/50 transition-colors resize-none placeholder:text-muted-foreground/60"
         />
       </div>
       <button

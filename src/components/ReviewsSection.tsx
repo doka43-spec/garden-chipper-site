@@ -76,7 +76,7 @@ function ReviewCard({ r }: { r: typeof REVIEWS[0] }) {
         </div>
         <p className="text-muted-foreground text-sm font-plex leading-relaxed mb-4 flex-1">"{r.text}"</p>
         <div className="flex items-center justify-between">
-          <span className="font-mono text-xs text-muted-foreground/60">{r.date}</span>
+          <span className="font-mono text-xs text-muted-foreground/80">{r.date}</span>
           <div className="flex items-center gap-1 text-xs text-muted-foreground">
             <Icon name="ThumbsUp" size={11} />
             Полезно
@@ -132,7 +132,7 @@ function ReviewModal({ onClose, onSubmit }: { onClose: () => void; onSubmit: (r:
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Иван Иванов"
                   required
-                  className="w-full bg-iron border border-border px-4 py-3 text-sm text-foreground font-plex focus:outline-none focus:border-warning/50 transition-colors placeholder:text-muted-foreground/40"
+                  className="w-full bg-iron border border-border px-4 py-3 text-sm text-foreground font-plex focus:outline-none focus:border-warning/50 transition-colors placeholder:text-muted-foreground/60"
                 />
               </div>
               <div>
@@ -161,7 +161,7 @@ function ReviewModal({ onClose, onSubmit }: { onClose: () => void; onSubmit: (r:
                   placeholder="Поделитесь впечатлениями об оборудовании..."
                   required
                   rows={4}
-                  className="w-full bg-iron border border-border px-4 py-3 text-sm text-foreground font-plex focus:outline-none focus:border-warning/50 transition-colors resize-none placeholder:text-muted-foreground/40"
+                  className="w-full bg-iron border border-border px-4 py-3 text-sm text-foreground font-plex focus:outline-none focus:border-warning/50 transition-colors resize-none placeholder:text-muted-foreground/60"
                 />
               </div>
               <button
