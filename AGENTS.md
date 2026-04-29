@@ -129,10 +129,10 @@ CDN-ссылка: `https://cdn.jsdelivr.net/gh/doka43-spec/rubitel-images/имя
 - [x] Преобразовать Organization → `LocalBusiness` (адрес, телефон, часы работы)
 - [x] Добавить JSON-LD `AggregateRating` с динамическим обновлением из реальных отзывов
 
-## Приоритет 4 — Производительность
-- [ ] Добавить `&display=swap` к Google Fonts в `index.html`
-- [ ] Удалить неиспользуемый пакет `next-themes`
-- [ ] Lazy-load для `ProductPage` и `NotFound` через `React.lazy`
+## Приоритет 4 — Производительность ✅ ВЫПОЛНЕНО 30.04.2026
+- [x] `&display=swap` для Google Fonts уже подключён (проверено)
+- [x] Удалён неиспользуемый пакет `next-themes` + неиспользуемый `Sonner`
+- [x] Lazy-load для `ProductPage` и `NotFound` через `React.lazy`
 
 ## Приоритет 5 — UX
 - [ ] Уменьшить высоту Hero на мобильных (60vh → 50vh)
@@ -188,3 +188,21 @@ CDN-ссылка: `https://cdn.jsdelivr.net/gh/doka43-spec/rubitel-images/имя
 **Изменённые файлы:**
 - `index.html`
 - `src/components/ReviewsSection.tsx`
+
+## 30.04.2026 — Приоритет 4: Производительность ✅
+
+**Выполнено:**
+- В `src/App.tsx` `ProductPage` и `NotFound` загружаются через `React.lazy` + `Suspense` — главная страница теперь стартует с меньшим бандлом
+- Удалён компонент `src/components/ui/sonner.tsx` (не использовался — `toast()` нигде не вызывается)
+- Удалён `<Sonner />` из `App.tsx`
+- Удалён npm-пакет `next-themes` (использовался только в sonner.tsx)
+- Шрифты Google Fonts проверены — `&display=swap` уже подключён, текст не «прыгает» при загрузке
+
+**Эффект:**
+- Меньший initial bundle для главной страницы → быстрее первая отрисовка
+- На одну зависимость меньше → меньше код, меньше уязвимостей
+
+**Изменённые файлы:**
+- `src/App.tsx`
+- `src/components/ui/sonner.tsx` (удалён)
+- `package.json` (удалён `next-themes`)
